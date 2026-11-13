@@ -450,6 +450,35 @@ html:has(body.mobile){overflow-y:auto;height:auto}
 .ct small.role{margin-top:6px;letter-spacing:.04em;text-transform:none;font-size:20px}
 .ct.p b.wm{font-size:44px}
 .mobile .ct small.role{font-size:14px}.mobile .ct.p b.wm{font-size:26px}
+
+/* prints reais (13/11) */
+.shotw{display:grid;grid-template-columns:1180px 1fr;gap:44px;margin-top:26px;align-items:start}
+.shot{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(11,37,69,.45);border:1px solid #d6e0ec;background:#fff}
+.shot img{display:block;width:100%;height:auto}
+.shot .real{position:absolute;top:14px;right:14px;background:#0b2545;color:#5eead4;font:800 15px/1 var(--text);letter-spacing:.14em;text-transform:uppercase;padding:9px 14px;border-radius:999px}
+.mk{position:absolute;border:4px solid #f59e0b;border-radius:12px;box-shadow:0 0 0 9999px rgba(11,37,69,0);animation:mkp 2.4s ease-in-out infinite}
+.mk b{position:absolute;top:-19px;left:-19px;width:38px;height:38px;border-radius:50%;background:#f59e0b;color:#fff;font:800 20px/38px var(--text);text-align:center}
+@keyframes mkp{50%{border-color:#14b8a6;transform:scale(1.015)}}
+.cl{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.cl li{display:grid;grid-template-columns:44px 1fr;gap:16px;font-size:25px;line-height:1.35;color:#33445c}
+.cl li i{width:44px;height:44px;border-radius:50%;background:#f59e0b;color:#fff;font:800 22px/44px var(--text);font-style:normal;text-align:center}
+.cl li b{color:var(--navy)}
+.dark .cl li{color:#cfe0f2}.dark .cl li b{color:#fff}
+.tl{display:grid;grid-template-columns:repeat(7,1fr);gap:16px;margin-top:40px;position:relative}
+.tl:before{content:"";position:absolute;left:3%;right:3%;top:34px;height:8px;border-radius:8px;background:linear-gradient(90deg,#14b8a6 0 62%,#f59e0b 62%)}
+.tl .e{position:relative;padding-top:84px;text-align:center}
+.tl .e:before{content:"";position:absolute;left:50%;top:18px;width:40px;height:40px;margin-left:-20px;border-radius:50%;background:#fff;border:7px solid #14b8a6}
+.tl .e.fut:before{border-color:#f59e0b;border-style:dashed}
+.tl .d{font:800 22px/1.1 var(--text);color:var(--teal)}.tl .e.fut .d{color:#d97706}
+.tl h3{font-size:26px;margin:8px 0 6px;color:var(--navy)}.tl p{font-size:19px;line-height:1.35;color:var(--muted);margin:0}
+.ia{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}
+.people{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:40px}
+.people .glass{text-align:center;padding:34px 22px}
+.people .av{width:110px;height:110px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;font:800 40px/1 var(--text);color:#0b2545;background:linear-gradient(135deg,#5eead4,#fbbf24)}
+.people h3{font-size:30px;color:#fff;margin:0 0 8px}.people p{font-size:21px;color:#cfe0f2;margin:0;line-height:1.35}
+.lemon{font-size:150px;line-height:1;display:inline-block;animation:lem 3s ease-in-out infinite}
+@keyframes lem{50%{transform:rotate(-10deg) translateY(-12px)}}
+.mobile .shotw,.mobile .ia,.mobile .people{grid-template-columns:1fr}.mobile .tl{grid-template-columns:1fr 1fr}.mobile .tl:before{display:none}.mobile .cl li{font-size:15px}
 </style></head><body class="on-first"><svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <defs>
 <symbol id="i-logo" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#14b8a6"/><path d="M18 14h20l10 10v26a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z" fill="#fff"/><path d="M38 14v10h10" fill="#cfe0f7"/><path d="M22 38l7 7 13-15" fill="none" stroke="#0b2545" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -519,7 +548,7 @@ html:has(body.mobile){overflow-y:auto;height:auto}
         <span class="badge"><svg class="ic"><use href="#i-wifioff"/></svg>Vistoria mesmo sem sinal</span>
         <span class="badge"><svg class="ic"><use href="#i-shield"/></svg>Os dados são do órgão</span>
       </div>
-      <div class="by rv" style="--i:5"><span>Desenvolvido por</span><b>Djair S. Almeida</b><span class="sep"></span><span>Coari/AM · versão 1.75.1</span></div>
+      <div class="by rv" style="--i:5"><span>Desenvolvido por</span><b>TramitaDOC</b><span class="sep"></span><span>Coari/AM · versão 1.92.0</span></div>
     </div>
     <svg class="covill rv zm" style="--i:2;width:760px;height:760px" viewBox="0 0 760 760" aria-hidden="true">
       <g fill="none" stroke="rgba(255,255,255,.13)" stroke-width="2">
@@ -549,7 +578,7 @@ html:has(body.mobile){overflow-y:auto;height:auto}
       </g></g>
     </svg>
   </div>
-  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.75.1</span><span class="r"></span></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
 </section>
 
 <!-- 2 PROBLEMA -->
@@ -564,7 +593,7 @@ html:has(body.mobile){overflow-y:auto;height:auto}
     <div class="card rv" style="--i:6"><span class="x">4</span><div class="ibox g-amber"><svg class="ic"><use href="#i-camera"/></svg></div><h3>Vistoria sem prova</h3><p>O fiscal foi ao local, mas não há foto, ponto no mapa nem registro de quando foi.</p></div>
   </div>
   <div class="answer rv" style="--i:8"><div class="ibox g-teal"><svg class="ic"><use href="#i-check"/></svg></div><div>Com o TramitaDOC, cada processo tem <b>sempre um responsável identificado</b> e um <b>histórico que mostra cada passo</b>, da abertura do protocolo ao arquivamento.</div></div>
-  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.75.1</span><span class="r"></span></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
 </section>
 
 <!-- 3 SOLUCAO -->
@@ -596,7 +625,91 @@ html:has(body.mobile){overflow-y:auto;height:auto}
     <div class="card step rv" style="--i:10"><div class="ph">Passo 4</div><h3>Emitir e arquivar</h3><p>Emita documentos com <b>selo e QR Code</b>, monte o <b>dossiê em PDF</b> e envie ao arquivo com controle.</p></div>
   </div>
   <div class="band rv" style="--i:11"><span class="ibox g-navy"><svg class="ic"><use href="#i-history"/></svg></span><span>Cada passo fica no <b>histórico do mesmo processo</b>: quem fez, o quê e quando. No fim, o <b>dossiê em PDF</b> reúne histórico, anexos, vistorias e documentos.</span></div>
-  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.75.1</span><span class="r"></span></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Passo 1 · Protocolar">
+  <div class="kicker rv" style="--i:0"><span class="n">02.1</span>Como funciona · passo 1</div>
+  <h2 class="title rv" style="--i:1">Protocolar: <span class="hl">o número sai na hora</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/novo.jpg" alt="Tela real do TramitaDOC: Passo 1 · Protocolar" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:17%;top:14%;width:82%;height:23%"><b>1</b></span><span class="mk" style="left:17%;top:57%;width:82%;height:25%"><b>2</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span><b>Dados do processo</b>: data, serviço, prioridade e setor. O número do protocolo é gerado ao salvar.</span></li><li class="rv" style="--i:4"><i>2</i><span><b>Requerente</b>: pessoa física ou jurídica, CPF, contato e endereço. Quem cadastra fica responsável.</span></li><li class="rv" style="--i:5"><i>3</i><span>Pronto: o processo já tem dono, prazo e histórico desde o primeiro minuto.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Passo 2 · Tramitar">
+  <div class="kicker rv" style="--i:0"><span class="n">02.2</span>Como funciona · passo 2</div>
+  <h2 class="title rv" style="--i:1">Tramitar: <span class="hl">o trajeto inteiro, com dono</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/processo.jpg" alt="Tela real do TramitaDOC: Passo 2 · Tramitar" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:17%;top:13%;width:82%;height:25%"><b>1</b></span><span class="mk" style="left:17%;top:40%;width:20%;height:6%"><b>2</b></span><span class="mk" style="left:58%;top:38%;width:40%;height:24%"><b>3</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span><b>Trajeto do processo</b>: 5 etapas, de setor em setor, com quem recebeu e quanto tempo ficou.</span></li><li class="rv" style="--i:4"><i>2</i><span><b>Encerrado</b>: entregue ao requerente, com data e resultado.</span></li><li class="rv" style="--i:5"><i>3</i><span><b>Demandante</b>, CPF, contato e endereço sempre à vista.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Caixa do servidor">
+  <div class="kicker rv" style="--i:0"><span class="n">02.3</span>Como funciona · a caixa</div>
+  <h2 class="title rv" style="--i:1">Cada servidor abre o dia <span class="hl">sabendo o que fazer</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/caixa.jpg" alt="Tela real do TramitaDOC: Caixa do servidor" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:17%;top:6%;width:22%;height:6%"><b>1</b></span><span class="mk" style="left:17%;top:15%;width:82%;height:35%"><b>2</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span><b>Minha caixa</b>: o que chegou para mim e precisa ser recebido.</span></li><li class="rv" style="--i:4"><i>2</i><span><b>Sob minha responsabilidade</b>: processos comigo, com situação e prazo em vermelho quando vence.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Agendado">
+  <div class="kicker rv" style="--i:0"><span class="n">02.7</span>Como funciona · agendado</div>
+  <h2 class="title rv" style="--i:1">Processo agendado: <span class="hl">tudo pronto para a análise</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/agendado.jpg" alt="Tela real do TramitaDOC: Agendado" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:17%;top:5%;width:30%;height:6%"><b>1</b></span><span class="mk" style="left:17%;top:19%;width:82%;height:23%"><b>2</b></span><span class="mk" style="left:17%;top:43%;width:59%;height:30%"><b>3</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span><b>Situação e prioridade</b> no topo, com o prazo.</span></li><li class="rv" style="--i:4"><i>2</i><span><b>Dados e demandante</b> completos, com WhatsApp e endereço.</span></li><li class="rv" style="--i:5"><i>3</i><span><b>Localização</b> no mapa com área e perímetro do lote.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Vistoria feita">
+  <div class="kicker rv" style="--i:0"><span class="n">02.8</span>Como funciona · vistoria</div>
+  <h2 class="title rv" style="--i:1">Vistoria feita <span class="hl">e atestada</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/vistoria.jpg" alt="Tela real do TramitaDOC: Vistoria feita" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:17%;top:13%;width:82%;height:12%"><b>1</b></span><span class="mk" style="left:17%;top:32%;width:37%;height:25%"><b>2</b></span><span class="mk" style="left:56%;top:30%;width:43%;height:40%"><b>3</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span><b>Pedida → agendada → em campo → atestada</b>, com data de cada passo.</span></li><li class="rv" style="--i:4"><i>2</i><span><b>O que conferir</b>: o pedido vem do processo.</span></li><li class="rv" style="--i:5"><i>3</i><span><b>Lote no mapa</b> e fotos tiradas no local.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Relatório de vistoria">
+  <div class="kicker rv" style="--i:0"><span class="n">02.9</span>Como funciona · relatório</div>
+  <h2 class="title rv" style="--i:1">O relatório sai <span class="hl">pronto, com selo</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/doc_vistoria.jpg" alt="Tela real do TramitaDOC: Relatório de vistoria" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:26%;top:3%;width:48%;height:95%"><b>1</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span>Identificação, verificação em campo, croqui do imóvel e fotos.</span></li><li class="rv" style="--i:4"><i>2</i><span>Assinado pelo fiscal e conferível por <b>QR Code</b>.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Certidão">
+  <div class="kicker rv" style="--i:0"><span class="n">02.10</span>Como funciona · certidão</div>
+  <h2 class="title rv" style="--i:1">Concluído: <span class="hl">certidão com o trajeto</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/doc_certidao.jpg" alt="Tela real do TramitaDOC: Certidão" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:26%;top:3%;width:48%;height:95%"><b>1</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span><b>Certidão de situação</b> com cada etapa por onde o processo passou.</span></li><li class="rv" style="--i:4"><i>2</i><span>Assinaturas do setor e do secretário, selo e QR Code.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Título definitivo">
+  <div class="kicker rv" style="--i:0"><span class="n">02.11</span>Como funciona · título</div>
+  <h2 class="title rv" style="--i:1">Título definitivo <span class="hl">gerado pelo sistema</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/doc_titulo.jpg" alt="Tela real do TramitaDOC: Título definitivo" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:26%;top:3%;width:48%;height:95%"><b>1</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span>Outorgante, outorgado, lote, área e <b>tabela de vértices</b> do memorial.</span></li><li class="rv" style="--i:4"><i>2</i><span>Pronto para a assinatura do Prefeito e do Secretário.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Uso e ocupação do solo">
+  <div class="kicker rv" style="--i:0"><span class="n">02.12</span>Como funciona · taxas</div>
+  <h2 class="title rv" style="--i:1">Serviço com <span class="hl">taxas e checklist</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/usosolo.jpg" alt="Tela real do TramitaDOC: Uso e ocupação do solo" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:17%;top:12%;width:82%;height:14%"><b>1</b></span><span class="mk" style="left:17%;top:37%;width:82%;height:23%"><b>2</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span><b>Trajeto</b> entre os setores no processo de uso e ocupação do solo.</span></li><li class="rv" style="--i:4"><i>2</i><span><b>Novo na v1.92</b>: guia de taxas calculada com base legal e checklist de documentos.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Passo 3 · Vistoriar">
+  <div class="kicker rv" style="--i:0"><span class="n">02.4</span>Como funciona · passo 3</div>
+  <h2 class="title rv" style="--i:1">Vistoria: <span class="hl">do escritório ao campo</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/vistorias.jpg" alt="Tela real do TramitaDOC: Passo 3 · Vistoriar" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:17%;top:16%;width:82%;height:18%"><b>1</b></span><span class="mk" style="left:17%;top:54%;width:82%;height:44%"><b>2</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span><b>Agenda da semana</b>: o fiscal marca o dia da visita.</span></li><li class="rv" style="--i:4"><i>2</i><span><b>Pedidas e feitas</b>: fotos com GPS no celular, relatório atestado e devolvido ao processo.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Mapa">
+  <div class="kicker rv" style="--i:0"><span class="n">02.5</span>Como funciona · mapa</div>
+  <h2 class="title rv" style="--i:1">Cada processo <span class="hl">no mapa da cidade</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/mapa.jpg" alt="Tela real do TramitaDOC: Mapa" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:43%;top:7%;width:45%;height:92%"><b>1</b></span><span class="mk" style="left:87%;top:7%;width:13%;height:60%"><b>2</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span><b>Imagem de satélite e drone</b> de Coari, com os lotes e núcleos.</span></li><li class="rv" style="--i:4"><i>2</i><span><b>Camadas</b>: processos por situação, prazo e tipo. Imprime prancha com carimbo.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Passo 4 · Emitir e conferir">
+  <div class="kicker rv" style="--i:0"><span class="n">02.6</span>Como funciona · passo 4</div>
+  <h2 class="title rv" style="--i:1">Documento com selo: <span class="hl">qualquer um confere</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/verificar.jpg" alt="Tela real do TramitaDOC: Passo 4 · Emitir e conferir" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:30%;top:30%;width:40%;height:40%"><b>1</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span>Certidões, guias, títulos e dossiê saem com <b>selo e QR Code</b>.</span></li><li class="rv" style="--i:4"><i>2</i><span>O cidadão ou o cartório confere a autenticidade em <b>/verificar</b>, sem login.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
 </section>
 
 <!-- 4 FUNCIONALIDADES -->
@@ -615,7 +728,7 @@ html:has(body.mobile){overflow-y:auto;height:auto}
     <div class="card rv" style="--i:9"><div class="ibox g-navy"><svg class="ic"><use href="#i-archive"/></svg></div><div><h3>Arquivo físico</h3><p>Onde está cada caixa, empréstimos com devolução e registro de eliminação.</p></div></div>
     <div class="card rv" style="--i:10"><div class="ibox g-teal"><svg class="ic"><use href="#i-inbox"/></svg></div><div><h3>Caixa de cada servidor</h3><p>Cada pessoa vê o que está sob sua responsabilidade e o que está chegando para receber.</p></div></div>
   </div>
-  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.75.1</span><span class="r"></span></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
 </section>
 
 <!-- 5 REGRA DO RECEBIMENTO -->
@@ -660,96 +773,13 @@ html:has(body.mobile){overflow-y:auto;height:auto}
       </ul>
     </div>
   </div>
-  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.75.1</span><span class="r"></span></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
 </section>
 <!-- 6 TOUR 1: CAIXA -->
-<section class="slide" data-title="Tour: a caixa do servidor">
-  <div class="kicker rv" style="--i:0"><span class="n">05</span>Tour pelo sistema</div>
-  <h2 class="title rv" style="--i:1">Cada servidor abre o dia sabendo <span class="hl">o que é seu</span></h2>
-  <div class="tour">
-    <div class="win rv zm" style="--i:2">
-      <span class="tag-il" style="right:18px;top:8px">Tela ilustrativa · dados fictícios</span>
-      <div class="wbar"><i></i><i></i><i></i><span class="url">tramitadoc · Caixa de entrada</span></div>
-      <div class="app">
-        <div class="side">
-          <div class="wm">Tramita<span class="doc">DOC</span></div>
-          <div class="it on"><svg class="ic"><use href="#i-inbox"/></svg>Caixa de entrada</div>
-          <div class="it"><svg class="ic"><use href="#i-file"/></svg>Processos</div>
-          <div class="it"><svg class="ic"><use href="#i-camera"/></svg>Vistorias</div>
-          <div class="it"><svg class="ic"><use href="#i-qr"/></svg>Documentos</div>
-          <div class="it"><svg class="ic"><use href="#i-books"/></svg>Acervo</div>
-          <div class="it"><svg class="ic"><use href="#i-archive"/></svg>Arquivo físico</div>
-        </div>
-        <div class="main">
-          <div class="mtop"><h4>Minha caixa</h4><div class="search"><svg class="ic"><use href="#i-search"/></svg>Buscar também no texto dos PDFs…</div></div>
-          <div class="sect rv fd" style="--i:3"><span class="dot"></span>Chegando para receber</div>
-          <div class="row inc rv fr" style="--i:4"><span class="pn">Nº 0000/2026</span><span class="as">Requerimento (exemplo)<small>Assunto de exemplo</small></span><span class="fr">De: Protocolo</span><span class="ac"><span class="btn ping"><svg class="ic"><use href="#i-check"/></svg>Receber</span></span></div>
-          <div class="row inc rv fr" style="--i:5"><span class="pn">Nº 0001/2026</span><span class="as">Pedido de certidão (exemplo)<small>Assunto de exemplo</small></span><span class="fr">De: Atendimento</span><span class="ac"><span class="btn"><svg class="ic"><use href="#i-check"/></svg>Receber</span></span></div>
-          <div class="sect rv fd" style="--i:6"><span class="dot t"></span>Sob minha responsabilidade</div>
-          <div class="row rv fr" style="--i:7"><span class="pn">Nº 0002/2026</span><span class="as">Solicitação de vistoria<small>Assunto de exemplo</small></span><span class="fr">Setor Exemplo</span><span class="ac"><span class="st t">Vistoria concluída</span></span></div>
-          <div class="row rv fr" style="--i:8"><span class="pn">Nº 0003/2026</span><span class="as">Requerimento (exemplo)<small>Assunto de exemplo</small></span><span class="fr">Setor Exemplo</span><span class="ac"><span class="st b">Em análise</span></span></div>
-          <div class="row rv fr" style="--i:9"><span class="pn">Nº 0004/2026</span><span class="as">Emissão de documento<small>Assunto de exemplo</small></span><span class="fr">Setor Exemplo</span><span class="ac"><span class="st v">Aguardando emissão</span></span></div>
-        </div>
-      </div>
-    </div>
-    <div class="callouts">
-      <div class="card rv fr" style="--i:4"><div class="ibox g-teal"><svg class="ic"><use href="#i-inbox"/></svg></div><div><h3>A caixa de cada um</h3><p>O que está sob a sua responsabilidade e o que está chegando para receber.</p></div></div>
-      <div class="card rv fr" style="--i:6"><div class="ibox g-amber"><svg class="ic"><use href="#i-check"/></svg></div><div><h3>Um clique para receber</h3><p>Ao receber, o servidor assume o processo, com data e hora no histórico.</p></div></div>
-      <div class="card rv fr" style="--i:8"><div class="ibox g-red"><svg class="ic"><use href="#i-undo"/></svg></div><div><h3>Faltou algo? Devolve</h3><p>A devolução vai com motivo e fica registrada no histórico.</p></div></div>
-      <div class="card rv fr" style="--i:10"><div class="ibox g-blue"><svg class="ic"><use href="#i-searchdoc"/></svg></div><div><h3>Busca no texto dos PDFs</h3><p>Ache o processo pelo conteúdo dos anexos, inclusive digitalizados (OCR).</p></div></div>
-    </div>
-  </div>
-  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.75.1</span><span class="r"></span></div>
-</section>
+
 
 <!-- 7 TOUR 2: PROCESSO + DOCUMENTO -->
-<section class="slide" data-title="Tour: processo e documento">
-  <div class="kicker rv" style="--i:0"><span class="n">06</span>Tour pelo sistema</div>
-  <h2 class="title rv" style="--i:1">Todo o caminho do processo, <span class="hl">numa tela só</span></h2>
-  <div class="tour2">
-    <div class="win rv fl" style="--i:2">
-      <span class="tag-il" style="right:18px;top:8px">Tela ilustrativa · dados fictícios</span>
-      <div class="wbar"><i></i><i></i><i></i><span class="url">tramitadoc · Processo 0000/2026</span></div>
-      <div class="pd">
-        <div class="hdr"><div><h4>Processo nº 0000/2026</h4><p>Assunto: exemplo de requerimento · Requerente: fictício</p></div><span class="st b">Em análise</span></div>
-        <div class="resp"><span class="av t">SE</span><div><small>Responsável agora</small><b>Setor Exemplo · Servidor(a) fictício(a)</b></div></div>
-        <ul class="tl">
-          <li class="rv fd" style="--i:3">Protocolo aberto<small>Atendimento · dia 1</small></li>
-          <li class="rv fd" style="--i:4">Recebido pelo setor técnico<small>Responsável assumiu ao receber</small></li>
-          <li class="r rv fd" style="--i:5">Devolvido com motivo<small>“Falta anexar documento” · dia 3</small></li>
-          <li class="rv fd" style="--i:6">Vistoria registrada em campo<small>3 fotos · ponto GPS · enviada ao voltar o sinal</small></li>
-          <li class="p rv fd" style="--i:7">Aguardando emissão de documento<small>Selo + QR Code</small></li>
-        </ul>
-        <div class="tiles rv" style="--i:8">
-          <div class="tile">Anexos<b>4 PDFs</b></div>
-          <div class="tile">Vistoria<b>Concluída</b></div>
-          <div class="tile go">Dossiê<b>⤓ Gerar PDF</b></div>
-        </div>
-      </div>
-    </div>
-    <div style="position:relative;padding-top:24px">
-      <div class="paper rv fr" style="--i:5">
-        <span class="tag-il" style="left:24px;top:-18px">Documento ilustrativo</span>
-        <div class="org">Prefeitura Municipal de [Exemplo]<br>Secretaria Municipal de [Exemplo]</div>
-        <h4>CERTIDÃO</h4>
-        <div class="dn">Documento nº 0000/2026 · Processo nº 0000/2026</div>
-        <div class="ln" style="margin-top:26px"></div><div class="ln"></div><div class="ln" style="width:86%"></div><div class="ln"></div><div class="ln" style="width:64%"></div>
-        <div class="foot">
-          <svg width="128" height="128" viewBox="0 0 128 128" class="rv pop" style="--i:8" aria-hidden="true">
-            <defs><path id="sealc" d="M64 64m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs>
-            <circle cx="64" cy="64" r="60" fill="#fff" stroke="#0d8a7d" stroke-width="4"/><circle cx="64" cy="64" r="34" fill="#d5f5f0" stroke="#0d8a7d" stroke-width="2"/>
-            <text font-family="TD Text,Inter,sans-serif" font-size="11.5" font-weight="800" fill="#0b6f65" letter-spacing="2"><textPath href="#sealc">DOCUMENTO EMITIDO · TRAMITADOC ·</textPath></text>
-            <path d="M50 64l10 10 18-20" fill="none" stroke="#0b6f65" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div class="rv pop" style="--i:9"><svg width="128" height="128" viewBox="-6 -6 137 137" aria-label="QR Code ilustrativo"><rect x="-6" y="-6" width="137" height="137" rx="8" fill="#fff" stroke="#dbe3ee"/><path d="M40 0h5v5h-5zM45 0h5v5h-5zM55 0h5v5h-5zM65 0h5v5h-5zM70 0h5v5h-5zM80 0h5v5h-5zM40 5h5v5h-5zM45 5h5v5h-5zM50 5h5v5h-5zM55 5h5v5h-5zM65 5h5v5h-5zM70 5h5v5h-5zM45 10h5v5h-5zM55 10h5v5h-5zM65 10h5v5h-5zM70 10h5v5h-5zM75 10h5v5h-5zM80 10h5v5h-5zM45 15h5v5h-5zM60 15h5v5h-5zM70 15h5v5h-5zM75 15h5v5h-5zM80 15h5v5h-5zM45 20h5v5h-5zM50 20h5v5h-5zM60 20h5v5h-5zM65 20h5v5h-5zM80 20h5v5h-5zM60 25h5v5h-5zM70 25h5v5h-5zM75 25h5v5h-5zM40 30h5v5h-5zM50 30h5v5h-5zM75 30h5v5h-5zM50 35h5v5h-5zM65 35h5v5h-5zM75 35h5v5h-5zM15 40h5v5h-5zM20 40h5v5h-5zM30 40h5v5h-5zM35 40h5v5h-5zM40 40h5v5h-5zM45 40h5v5h-5zM50 40h5v5h-5zM60 40h5v5h-5zM65 40h5v5h-5zM70 40h5v5h-5zM80 40h5v5h-5zM85 40h5v5h-5zM110 40h5v5h-5zM115 40h5v5h-5zM120 40h5v5h-5zM10 45h5v5h-5zM15 45h5v5h-5zM20 45h5v5h-5zM25 45h5v5h-5zM40 45h5v5h-5zM45 45h5v5h-5zM50 45h5v5h-5zM55 45h5v5h-5zM90 45h5v5h-5zM115 45h5v5h-5zM120 45h5v5h-5zM0 50h5v5h-5zM10 50h5v5h-5zM15 50h5v5h-5zM20 50h5v5h-5zM25 50h5v5h-5zM30 50h5v5h-5zM35 50h5v5h-5zM40 50h5v5h-5zM45 50h5v5h-5zM50 50h5v5h-5zM55 50h5v5h-5zM60 50h5v5h-5zM75 50h5v5h-5zM80 50h5v5h-5zM85 50h5v5h-5zM90 50h5v5h-5zM95 50h5v5h-5zM110 50h5v5h-5zM120 50h5v5h-5zM0 55h5v5h-5zM5 55h5v5h-5zM10 55h5v5h-5zM20 55h5v5h-5zM25 55h5v5h-5zM40 55h5v5h-5zM50 55h5v5h-5zM75 55h5v5h-5zM80 55h5v5h-5zM85 55h5v5h-5zM105 55h5v5h-5zM110 55h5v5h-5zM20 60h5v5h-5zM30 60h5v5h-5zM35 60h5v5h-5zM40 60h5v5h-5zM45 60h5v5h-5zM50 60h5v5h-5zM65 60h5v5h-5zM85 60h5v5h-5zM90 60h5v5h-5zM95 60h5v5h-5zM100 60h5v5h-5zM105 60h5v5h-5zM0 65h5v5h-5zM15 65h5v5h-5zM40 65h5v5h-5zM45 65h5v5h-5zM55 65h5v5h-5zM70 65h5v5h-5zM75 65h5v5h-5zM90 65h5v5h-5zM95 65h5v5h-5zM100 65h5v5h-5zM115 65h5v5h-5zM10 70h5v5h-5zM20 70h5v5h-5zM25 70h5v5h-5zM50 70h5v5h-5zM65 70h5v5h-5zM70 70h5v5h-5zM75 70h5v5h-5zM80 70h5v5h-5zM90 70h5v5h-5zM95 70h5v5h-5zM100 70h5v5h-5zM110 70h5v5h-5zM115 70h5v5h-5zM5 75h5v5h-5zM30 75h5v5h-5zM35 75h5v5h-5zM40 75h5v5h-5zM45 75h5v5h-5zM55 75h5v5h-5zM60 75h5v5h-5zM75 75h5v5h-5zM95 75h5v5h-5zM105 75h5v5h-5zM110 75h5v5h-5zM15 80h5v5h-5zM40 80h5v5h-5zM50 80h5v5h-5zM75 80h5v5h-5zM95 80h5v5h-5zM100 80h5v5h-5zM105 80h5v5h-5zM110 80h5v5h-5zM115 80h5v5h-5zM120 80h5v5h-5zM55 85h5v5h-5zM70 85h5v5h-5zM85 85h5v5h-5zM95 85h5v5h-5zM115 85h5v5h-5zM120 85h5v5h-5zM45 90h5v5h-5zM50 90h5v5h-5zM55 90h5v5h-5zM65 90h5v5h-5zM75 90h5v5h-5zM80 90h5v5h-5zM85 90h5v5h-5zM100 90h5v5h-5zM120 90h5v5h-5zM40 95h5v5h-5zM45 95h5v5h-5zM55 95h5v5h-5zM60 95h5v5h-5zM65 95h5v5h-5zM80 95h5v5h-5zM85 95h5v5h-5zM105 95h5v5h-5zM110 95h5v5h-5zM120 95h5v5h-5zM40 100h5v5h-5zM60 100h5v5h-5zM70 100h5v5h-5zM80 100h5v5h-5zM85 100h5v5h-5zM100 100h5v5h-5zM105 100h5v5h-5zM115 100h5v5h-5zM120 100h5v5h-5zM40 105h5v5h-5zM45 105h5v5h-5zM50 105h5v5h-5zM55 105h5v5h-5zM60 105h5v5h-5zM70 105h5v5h-5zM80 105h5v5h-5zM85 105h5v5h-5zM90 105h5v5h-5zM95 105h5v5h-5zM100 105h5v5h-5zM115 105h5v5h-5zM120 105h5v5h-5zM45 110h5v5h-5zM55 110h5v5h-5zM70 110h5v5h-5zM90 110h5v5h-5zM110 110h5v5h-5zM115 110h5v5h-5zM120 110h5v5h-5zM40 115h5v5h-5zM45 115h5v5h-5zM55 115h5v5h-5zM60 115h5v5h-5zM65 115h5v5h-5zM85 115h5v5h-5zM90 115h5v5h-5zM95 115h5v5h-5zM100 115h5v5h-5zM105 115h5v5h-5zM110 115h5v5h-5zM115 115h5v5h-5zM50 120h5v5h-5zM60 120h5v5h-5zM65 120h5v5h-5zM70 120h5v5h-5zM75 120h5v5h-5zM80 120h5v5h-5zM90 120h5v5h-5zM100 120h5v5h-5zM105 120h5v5h-5zM110 120h5v5h-5zM115 120h5v5h-5zM120 120h5v5h-5z" fill="#0b2545"/><rect x="0" y="0" width="35" height="35" fill="#0b2545"/><rect x="5" y="5" width="25" height="25" fill="#fff"/><rect x="10" y="10" width="15" height="15" fill="#0b2545"/><rect x="90" y="0" width="35" height="35" fill="#0b2545"/><rect x="95" y="5" width="25" height="25" fill="#fff"/><rect x="100" y="10" width="15" height="15" fill="#0b2545"/><rect x="0" y="90" width="35" height="35" fill="#0b2545"/><rect x="5" y="95" width="25" height="25" fill="#fff"/><rect x="10" y="100" width="15" height="15" fill="#0b2545"/></svg></div>
-          <p><b>Selo + QR Code</b>Qualquer pessoa confere a autenticidade pelo QR Code.</p>
-        </div>
-      </div>
-      <div class="fbadge rv pop" style="--i:10;left:40px;bottom:-150px"><span class="ibox g-teal"><svg class="ic"><use href="#i-wifioff"/></svg></span><span>Sem sinal?<small>Vistoria salva no aparelho e enviada depois</small></span></div>
-    </div>
-  </div>
-  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.75.1</span><span class="r"></span></div>
-</section>
+
 
 <!-- 8 JA EM USO -->
 <section class="slide" data-title="Já em uso">
@@ -760,17 +790,17 @@ html:has(body.mobile){overflow-y:auto;height:auto}
       <svg class="deco" style="right:-140px;bottom:-160px;width:520px;height:520px;opacity:.22" viewBox="0 0 520 520"><g fill="none" stroke="#5eead4" stroke-width="2"><circle cx="260" cy="260" r="110"/><circle cx="260" cy="260" r="180"/><circle cx="260" cy="260" r="250" stroke-dasharray="4 10"/></g></svg>
       <span class="live"><span class="ld"></span>Em produção</span>
       <h3>Numa secretaria municipal, no trabalho real.</h3>
-      <p>Protocolo, tramitação, vistoria em campo, documentos com selo e QR Code e arquivo <b>já rodam no dia a dia</b> de uma secretaria municipal no Amazonas.</p>
-      <div class="ver"><span class="v">v1.75.1</span><small>versão atual,<br>em evolução contínua</small></div>
+      <p>Protocolo, tramitação, vistoria em campo, documentos com selo e QR Code e arquivo <b>já rodam no dia a dia</b> da Secretaria Municipal de Terras e Habitação de Coari (SMTH).</p>
+      <div class="ver"><span class="v">v1.92.0</span><small>versão atual,<br>em evolução contínua</small></div>
     </div>
     <div class="qual">
       <div class="card rv fr" style="--i:3"><div class="ibox g-teal"><svg class="ic"><use href="#i-users"/></svg></div><h3>Usado por servidores, não só testado</h3><p>Do balcão do protocolo à vistoria no local, o sistema acompanha o trabalho de verdade.</p></div>
       <div class="card rv fr" style="--i:4"><div class="ibox g-blue"><svg class="ic"><use href="#i-browser"/></svg></div><h3>Sem instalar programas</h3><p>Roda no navegador. Em campo, basta um celular ou tablet com navegador atualizado.</p></div>
       <div class="card rv fr" style="--i:5"><div class="ibox g-amber"><svg class="ic"><use href="#i-sprout"/></svg></div><h3>Começa pequeno, cresce depois</h3><p>A implantação pode começar por uma secretaria ou setor, sem desligar de uma vez o que já funciona.</p></div>
-      <div class="card rv fr" style="--i:6"><div class="ibox g-navy"><svg class="ic"><use href="#i-pin"/></svg></div><h3>Feito na Floresta Amazônica</h3></div>
+      <div class="card rv fr" style="--i:6"><div class="ibox g-navy"><svg class="ic"><use href="#i-pin"/></svg></div><h3>Feito na Floresta Amazônica</h3><p>Em Coari, no coração do Amazonas, com a equipe e os recursos que temos.</p></div>
     </div>
   </div>
-  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.75.1</span><span class="r"></span></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
 </section>
 
 <!-- 9 GESTOR -->
@@ -822,7 +852,35 @@ html:has(body.mobile){overflow-y:auto;height:auto}
     </div>
   </div>
   <div class="band rv" style="--i:7"><span class="ibox g-teal"><svg class="ic"><use href="#i-history"/></svg></span><span>A informação vem do <b>próprio andamento dos processos</b>: o histórico registra cada envio, recebimento e devolução, com data, setor e motivo.</span></div>
-  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.75.1</span><span class="r"></span></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Painel do gestor">
+  <div class="kicker rv" style="--i:0"><span class="n">08.1</span>Visão de gestão · painel</div>
+  <h2 class="title rv" style="--i:1">Situação de <span class="hl">todos os processos</span>, em tempo real</h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/painel.jpg" alt="Tela real do TramitaDOC: Painel do gestor" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:17%;top:29%;width:82%;height:14%"><b>1</b></span><span class="mk" style="left:17%;top:50%;width:82%;height:42%"><b>2</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span><b>Indicadores</b>: concluídos, em execução, paralisados e atrasados.</span></li><li class="rv" style="--i:4"><i>2</i><span><b>Gráficos</b> por situação, prioridade e ano de entrada. Sem planilha paralela.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Prazos e busca">
+  <div class="kicker rv" style="--i:0"><span class="n">08.2</span>Visão de gestão · prazos</div>
+  <h2 class="title rv" style="--i:1">Prazos à vista e <span class="hl">exportação para Excel</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/lista.jpg" alt="Tela real do TramitaDOC: Prazos e busca" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:17%;top:34%;width:46%;height:5%"><b>1</b></span><span class="mk" style="left:80%;top:39%;width:18%;height:4%"><b>2</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span><b>Atrasados, vencendo e parados</b> há mais de 30 dias, num clique.</span></li><li class="rv" style="--i:4"><i>2</i><span><b>Excel, mapa e PDF</b>: o relatório sai do jeito que o gestor precisa.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Quadro">
+  <div class="kicker rv" style="--i:0"><span class="n">08.4</span>Visão de gestão · quadro</div>
+  <h2 class="title rv" style="--i:1">Quadro: <span class="hl">arrasta e muda a situação</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/quadro.jpg" alt="Tela real do TramitaDOC: Quadro" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:17%;top:11%;width:82%;height:86%"><b>1</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span>Colunas por situação: não informado, agendado, em execução, paralisado e concluído.</span></li><li class="rv" style="--i:4"><i>2</i><span>Cada cartão mostra o atraso; arrastar registra um despacho no processo.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Desempenho">
+  <div class="kicker rv" style="--i:0"><span class="n">08.3</span>Visão de gestão · desempenho</div>
+  <h2 class="title rv" style="--i:1">Desempenho da equipe, <span class="hl">para organizar, não para punir</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/desempenho.jpg" alt="Tela real do TramitaDOC: Desempenho" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:17%;top:51%;width:82%;height:17%"><b>1</b></span><span class="mk" style="left:17%;top:72%;width:82%;height:26%"><b>2</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span><b>Ações, tempo ativo e tempo para receber</b> cada processo.</span></li><li class="rv" style="--i:4"><i>2</i><span><b>Tramitações, despachos, documentos</b> e vistorias por dia e por pessoa.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
 </section>
 
 <!-- 10 SEGURANCA -->
@@ -851,7 +909,14 @@ html:has(body.mobile){overflow-y:auto;height:auto}
       <div class="lgpd rv" style="--i:8"><svg class="ic"><use href="#i-alert"/></svg><span>A adequação à LGPD é responsabilidade compartilhada entre o órgão (controlador) e o fornecedor (operador). Os termos de tratamento de dados são definidos no contrato.</span></div>
     </div>
   </div>
-  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.75.1</span><span class="r"></span></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+<section class="slide" data-title="Auditoria">
+  <div class="kicker rv" style="--i:0"><span class="n">09.1</span>Segurança · rastro de tudo</div>
+  <h2 class="title rv" style="--i:1">Rastro de tudo: <span class="hl">quem, o quê e quando</span></h2>
+  <div class="shotw"><div class="shot rv zm" style="--i:2"><img src="prints/auditoria.jpg" alt="Tela real do TramitaDOC: Auditoria" loading="lazy"><span class="real">Tela real · dados de teste</span><span class="mk" style="left:17%;top:5%;width:82%;height:8%"><b>1</b></span><span class="mk" style="left:17%;top:24%;width:82%;height:28%"><b>2</b></span><span class="mk" style="left:68%;top:58%;width:30%;height:40%"><b>3</b></span></div>
+  <ul class="cl"><li class="rv" style="--i:3"><i>1</i><span><b>Registro de acessos</b>: entradas, saídas e logins recusados. Não pode ser alterado.</span></li><li class="rv" style="--i:4"><i>2</i><span><b>Filtros</b> por período, pessoa, área, IP e tela com dados pessoais.</span></li><li class="rv" style="--i:5"><i>3</i><span><b>Exportar CSV</b> para o controle interno e auditorias.</span></li></ul></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
 </section>
 
 <!-- 11 ROADMAP -->
@@ -871,13 +936,13 @@ html:has(body.mobile){overflow-y:auto;height:auto}
       <g class="rv pop" style="--i:9"><circle cx="1500" cy="75" r="40" fill="#fff" stroke="#f59e0b" stroke-width="5" stroke-dasharray="8 6"/><use href="#i-mail" x="1480" y="55" width="40" height="40" style="fill:none;stroke:#b45309;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></g>
     </svg>
     <div class="rcards">
-      <div class="card now rv" style="--i:3"><span class="soon on">Hoje · v1.75.1</span><h3>Em produção</h3><p>Protocolo, tramitação, vistoria, documentos com selo e QR Code, dossiê e arquivo.</p></div>
+      <div class="card now rv" style="--i:3"><span class="soon on">Hoje · v1.92.0</span><h3>Em produção</h3><p>Protocolo, tramitação, vistoria, documentos com selo e QR Code, dossiê e arquivo.</p></div>
       <div class="card rv" style="--i:5"><span class="soon">Em breve</span><h3>Várias secretarias tramitando entre si</h3><p>Processos circulando entre secretarias da mesma prefeitura, com o mesmo controle de responsável e histórico.</p></div>
       <div class="card rv" style="--i:7"><span class="soon">Em breve</span><h3>Assinatura eletrônica gov.br</h3><p>Integração para assinatura eletrônica com conta gov.br, conforme as regras do serviço.</p></div>
       <div class="card rv" style="--i:9"><span class="soon">Em breve</span><h3>Ofícios e memorandos</h3><p>Redação, numeração e envio de ofícios e memorandos dentro do próprio sistema.</p></div>
     </div>
   </div>
-  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.75.1</span><span class="r"></span></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
 </section>
 
 <!-- 12 PROXIMOS PASSOS -->
@@ -894,14 +959,66 @@ html:has(body.mobile){overflow-y:auto;height:auto}
   <div class="close-line rv" style="--i:8">Do protocolo ao campo, <span>com responsável e histórico.</span></div>
   <div class="contact">
     <div class="ct rv pop" style="--i:9"><svg class="ic"><use href="#i-user"/></svg><div><small>Desenvolvido por</small><b>Djair Silva de Almeida</b><small class="role">Arquiteto de Sistemas</small></div></div>
-    <div class="ct p rv pop" style="--i:11"><svg class="lg"><use href="#i-logo"/></svg><div><b class="wm">Tramita<span class="doc">DOC</span></b><small>Coari/AM · versão 1.75.1</small></div></div>
+    <div class="ct p rv pop" style="--i:11"><svg class="lg"><use href="#i-logo"/></svg><div><b class="wm">Tramita<span class="doc">DOC</span></b><small>Coari/AM · versão 1.92.0</small></div></div>
   </div>
   <div class="src">Contratação por órgãos públicos segue a Lei nº 14.133/2021, na modalidade ou hipótese que se aplicar, conforme avaliação do próprio órgão e do seu jurídico.</div>
-  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.75.1</span><span class="r"></span></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
 </section>
 
+
+<section class="slide" data-title="Cronograma">
+  <div class="kicker rv" style="--i:0"><span class="n">12</span>Cronograma</div>
+  <h2 class="title rv" style="--i:1">Nosso desenvolvimento é <span class="hl">rápido</span></h2>
+  <p class="lead rv" style="--i:2">O que levaria um ano, com software, conhecimento e <b>inteligência artificial</b> saiu em pouco mais de um mês. Nasceu do <b>SIGED</b>, o sistema de gestão de documentos e acervo da SMTH, que foi incorporado.</p>
+  <div class="tl">
+    <div class="e rv" style="--i:3"><div class="d">Antes</div><h3>SIGED</h3><p>Gestão de documentos e acervo da SMTH</p></div>
+    <div class="e rv" style="--i:4"><div class="d">29/10</div><h3>v1.0</h3><p>Protocolo, tramitação e histórico</p></div>
+    <div class="e rv" style="--i:5"><div class="d">31/10 – 05/11</div><h3>v1.30 → v1.70</h3><p>Mapa, vistoria, acervo, documentos com selo</p></div>
+    <div class="e rv" style="--i:6"><div class="d">13/11</div><h3>v1.92</h3><p>Guia de taxas, checklist e certidões</p></div>
+    <div class="e fut rv" style="--i:7"><div class="d">Próxima semana</div><h3>Produção</h3><p>Uso real pelos servidores da SMTH</p></div>
+    <div class="e fut rv" style="--i:8"><div class="d">Dezembro/2026</div><h3>IA jurídica</h3><p>Testes da IA rodando dentro da prefeitura</p></div>
+    <div class="e fut rv" style="--i:9"><div class="d">Depois</div><h3>Plataforma</h3><p>Data center próprio de Coari, com backup</p></div>
+  </div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+
+<section class="slide dark" data-title="Spoiler: IA jurídica">
+  <div class="kicker rv" style="--i:0"><span class="n">13</span>Spoiler</div>
+  <h2 class="title rv" style="--i:1">IA jurídica <span class="hl">dentro da prefeitura</span></h2>
+  <p class="lead rv" style="--i:2">Modelos como o <b>Jurema</b> (IA treinada no Direito brasileiro, de licença aberta) rodando nos <b>computadores do próprio órgão</b>, on-premise. Testes a partir de dezembro, logo após o TramitaDOC.</p>
+  <div class="ia">
+    <div class="glass rv fr" style="--i:3"><div class="ibox g-teal"><svg class="ic"><use href="#i-file"/></svg></div><h3>Resumir e rascunhar</h3><p>Resumo de peças, rascunho de pareceres, ofícios e despachos. Sempre com revisão humana.</p></div>
+    <div class="glass rv fr" style="--i:5"><div class="ibox g-blue"><svg class="ic"><use href="#i-lock"/></svg></div><h3>Soberania dos dados</h3><p>Nada sai da prefeitura: os dados ficam nos nossos servidores, de acordo com a LGPD.</p></div>
+    <div class="glass rv fr" style="--i:7"><div class="ibox g-amber"><svg class="ic"><use href="#i-clock"/></svg></div><h3>Decisão mais rápida</h3><p>O gestor vê dados e documentos e decide: defere, ou devolve dizendo o que falta.</p></div>
+  </div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+
+<section class="slide dark" data-title="Quem faz">
+  <div class="kicker rv" style="--i:0"><span class="n">14</span>Quem faz</div>
+  <h2 class="title rv" style="--i:1">Feito em Coari, <span class="hl">por quem vive o problema</span></h2>
+  <p class="lead rv" style="--i:2">Pioneiro no interior do Amazonas. Começa na <b>Secretaria Municipal de Terras e Habitação (SMTH)</b> do município de Coari.</p>
+  <div class="people">
+    <div class="glass rv pop" style="--i:3"><div class="av">AP</div><h3>Adail Pinheiro</h3><p>Prefeito de Coari<br>Apoio e aval ao projeto</p></div>
+    <div class="glass rv pop" style="--i:5"><div class="av">MR</div><h3>Marcos Rolland</h3><p>Secretário Municipal de Terras e Habitação<br>Gestão do projeto e método ágil</p></div>
+    <div class="glass rv pop" style="--i:7"><div class="av">DJ</div><h3>Djair Almeida</h3><p>Desenvolvimento e arquitetura do sistema<br>Técnico em informática (IFAM) e agrimensor</p></div>
+    <div class="glass rv pop" style="--i:9"><div class="av">SM</div><h3>Equipe SMTH</h3><p>Servidores que testam, apontam e usam<br>e as secretarias que cederam os computadores</p></div>
+  </div>
+  <div class="lgpd rv" style="--i:10"><svg class="ic"><use href="#i-alert"/></svg><span>Um sistema é como um castelo cheio de cômodos: precisa de manutenção, backup e gente cuidando, senão vira ruína. Por isso: homologar, transferir a tecnologia e manter.</span></div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
+
+<section class="slide dark cover" data-title="Limonada">
+  <div style="text-align:center;margin-top:120px">
+    <div class="lemon rv pop" style="--i:1">🍋</div>
+    <h2 class="title rv" style="--i:2;font-size:84px;text-align:center">Tínhamos limões.<br><span class="hl">Fizemos uma limonada.</span></h2>
+    <p class="lead rv" style="--i:4;margin:30px auto 0;max-width:1300px;text-align:center">Com poucos recursos, um sistema de primeiro mundo. O maior ganho é do <b>cidadão</b>: o processo dele não fica parado.</p>
+    <p class="lead rv" style="--i:6;margin:40px auto 0;text-align:center"><b>Obrigado!</b> Espaço aberto para opiniões, sugestões e críticas.</p>
+  </div>
+  <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
+</section>
 <div id="hint"><kbd>←</kbd><kbd>→</kbd> navegar · <kbd>F</kbd> tela cheia</div>
-<div id="chrome"><div class="brand"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.75.1</div><div id="counter"><a id="pdfbtn" href="TramitaDOC_Apresentacao.pdf" download title="Baixar a apresentação em PDF">⤓ Baixar PDF</a><button id="bp" aria-label="Anterior">‹</button><span id="cnt">01 / 12</span><button id="bn" aria-label="Próximo">›</button></div></div>
+<div id="chrome"><div class="brand"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</div><div id="counter"><a id="pdfbtn" href="TramitaDOC_Apresentacao.pdf" download title="Baixar a apresentação em PDF">⤓ Baixar PDF</a><button id="bp" aria-label="Anterior">‹</button><span id="cnt">01 / 31</span><button id="bn" aria-label="Próximo">›</button></div></div>
 <div id="progress"><i></i></div>
 <div id="mhead"><svg><use href="#i-logo"/></svg><span class="t">TramitaDOC · <span id="mt"></span></span><span id="mc"></span><a href="TramitaDOC_Apresentacao.pdf" download>⤓ PDF</a><i class="bar"></i></div>
 </div>
