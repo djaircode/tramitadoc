@@ -479,6 +479,20 @@ html:has(body.mobile){overflow-y:auto;height:auto}
 .lemon{font-size:150px;line-height:1;display:inline-block;animation:lem 3s ease-in-out infinite}
 @keyframes lem{50%{transform:rotate(-10deg) translateY(-12px)}}
 .mobile .shotw,.mobile .ia,.mobile .people{grid-template-columns:1fr}.mobile .tl{grid-template-columns:1fr 1fr}.mobile .tl:before{display:none}.mobile .cl li{font-size:15px}
+
+/* cartão de encerramento: foco no TramitaDOC */
+.contact.foco{display:flex;justify-content:center;margin-top:44px}
+.ct.foco{position:relative;overflow:hidden;padding:34px 60px;gap:30px;border-radius:26px;animation:ctglow 3.2s ease-in-out infinite}
+.ct.foco svg.lg{width:96px;height:96px;animation:ctlogo 3.2s ease-in-out infinite}
+.ct.foco b.wm{font-size:76px}
+.ct.foco small{font-size:20px;margin-top:6px}
+.ct.foco:after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(94,234,212,.35),transparent);transform:skewX(-18deg);animation:ctbrilho 3.6s ease-in-out infinite}
+@keyframes ctglow{0%,100%{box-shadow:0 18px 50px rgba(20,184,166,.25),0 0 0 0 rgba(94,234,212,.5)}50%{box-shadow:0 24px 70px rgba(20,184,166,.45),0 0 0 14px rgba(94,234,212,0)}}
+@keyframes ctlogo{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px) rotate(-6deg)}}
+@keyframes ctbrilho{0%{left:-60%}60%,100%{left:130%}}
+@media (prefers-reduced-motion:reduce){.ct.foco,.ct.foco svg.lg,.ct.foco:after{animation:none}}
+.mobile .ct.foco{padding:18px 22px}.mobile .ct.foco b.wm{font-size:34px}.mobile .ct.foco svg.lg{width:48px;height:48px}
+body.pdf .ct.foco:after{display:none}
 </style></head><body class="on-first"><svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <defs>
 <symbol id="i-logo" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#14b8a6"/><path d="M18 14h20l10 10v26a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z" fill="#fff"/><path d="M38 14v10h10" fill="#cfe0f7"/><path d="M22 38l7 7 13-15" fill="none" stroke="#0b2545" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -957,9 +971,8 @@ html:has(body.mobile){overflow-y:auto;height:auto}
     <div class="glass rv" style="--i:7"><div class="k"><span>3</span><h3>Implantação</h3></div><p>Crescer para outros setores, sem desligar de uma vez o que já funciona. Os dados continuam do órgão.</p></div>
   </div>
   <div class="close-line rv" style="--i:8">Do protocolo ao campo, <span>com responsável e histórico.</span></div>
-  <div class="contact">
-    <div class="ct rv pop" style="--i:9"><svg class="ic"><use href="#i-user"/></svg><div><small>Desenvolvido por</small><b>Djair Silva de Almeida</b><small class="role">Arquiteto de Sistemas</small></div></div>
-    <div class="ct p rv pop" style="--i:11"><svg class="lg"><use href="#i-logo"/></svg><div><b class="wm">Tramita<span class="doc">DOC</span></b><small>Coari/AM · versão 1.92.0</small></div></div>
+  <div class="contact foco">
+    <div class="ct p foco rv pop" style="--i:9"><svg class="lg"><use href="#i-logo"/></svg><div><b class="wm">Tramita<span class="doc">DOC</span></b><small>Coari/AM · versão 1.92.0</small></div></div>
   </div>
   <div class="src">Contratação por órgãos públicos segue a Lei nº 14.133/2021, na modalidade ou hipótese que se aplicar, conforme avaliação do próprio órgão e do seu jurídico.</div>
   <div class="pgf"><span class="l"><svg><use href="#i-logo"/></svg><span class="wm">Tramita<span class="doc">DOC</span></span><i></i>Coari/AM · versão 1.92.0</span><span class="r"></span></div>
