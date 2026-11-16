@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200" width="760" height="200">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d8a7d"/><stop offset="1" stop-color="#14b8a6"/></linearGradient>
+<style>@font-face{font-family:"Outfit";src:url(../fonts/Outfit-latin-var.woff2)} text{font-family:Outfit,"Segoe UI",Arial,sans-serif;font-weight:800;letter-spacing:-2px}</style></defs>
+<g transform="translate(36,36) scale(2)"><rect width="64" height="64" rx="14" fill="#0b2545"/><path d="M18 14h20l10 10v26a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z" fill="#fff"/><path d="M38 14v10h10" fill="#cfe0f7"/><path d="M22 38l7 7 13-15" fill="none" stroke="#14b8a6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="190" y="128" font-size="84" fill="#0b2545">Tramita</text>
+<rect x="497" y="50" width="226" height="100" rx="14" fill="url(#g)"/>
+<text x="513" y="128" font-size="84" fill="#ffffff">DOC</text></svg>

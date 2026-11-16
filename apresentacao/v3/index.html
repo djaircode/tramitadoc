@@ -1,0 +1,253 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TramitaDOC · Apresentação do produto (v3)</title>
+<meta name="description" content="TramitaDOC: protocolo e tramitação de processos para órgãos públicos. Apresentação animada do produto.">
+<link rel="icon" type="image/svg+xml" href="../../assets/design/logo/tramitadoc-icone.svg">
+<link rel="stylesheet" href="../../assets/design/tokens.css">
+<style>*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--td-navy-900);overflow:hidden;font-family:var(--td-font-text);color:var(--td-ink);-webkit-font-smoothing:antialiased}
+#stage{position:absolute;width:1600px;height:900px;left:50%;top:50%;transform-origin:center}
+.s{position:absolute;inset:0;padding:64px 90px;background:radial-gradient(900px 600px at 100% 0%,rgba(20,184,166,.12),transparent 60%),radial-gradient(900px 700px at 0% 100%,rgba(29,99,214,.08),transparent 60%),var(--td-bg);opacity:0;visibility:hidden;transition:opacity .6s,visibility .6s;overflow:hidden}
+.s.on{opacity:1;visibility:visible}
+.s.dark{background:var(--td-grad-hero-dark);color:#fff}
+.bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.s.on .bg{animation:kb 16s ease-out forwards}@keyframes kb{from{transform:scale(1.18)}to{transform:scale(1.02)}}
+.ov{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(7,26,51,.97) 0%,rgba(7,26,51,.9) 50%,rgba(11,37,69,.6) 100%)}
+.c{position:relative;z-index:2;height:100%}
+h1,h2,h3{font-family:var(--td-font-display);margin:0;letter-spacing:-.02em}
+h1{font-size:84px;line-height:1.02;margin-bottom:22px}
+h2{font-size:56px;line-height:1.05;margin-bottom:14px;color:var(--td-navy-800)}.dark h2{color:#fff}
+.gt{background:var(--td-grad-text-dark);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gt2{background:var(--td-grad-text-light);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dark .gt2{background:var(--td-grad-text-dark);-webkit-background-clip:text;background-clip:text}
+.sub{font-size:26px;line-height:1.4;color:var(--td-muted);margin:0 0 28px}.dark .sub{color:#cfe0f2}
+.tag{display:inline-flex;gap:10px;align-items:center;background:var(--td-navy-800);color:#fff;border-radius:999px;padding:9px 20px;font-size:18px;font-weight:600;margin-bottom:18px}
+.tag .i{width:22px;height:22px;color:var(--td-mint-300)}.dark .tag{background:rgba(94,234,212,.16);color:var(--td-mint-300)}.tag.vio{background:var(--td-violet-600)}
+.i{width:28px;height:28px;flex:none}
+.logo{width:64px;height:64px}.logo.big{width:110px;height:110px;filter:drop-shadow(0 20px 40px rgba(20,184,166,.35))}
+.wm{font-family:var(--td-font-display);font-weight:800;letter-spacing:-.02em;font-size:44px;color:#fff;display:inline-flex;align-items:center}
+.wm b{color:#fff;background:var(--td-grad-brand);padding:.04em .16em .06em;border-radius:.14em;margin-left:.05em;box-shadow:var(--td-shadow-glow-teal)}
+.wm.xl{font-size:88px}
+/* entradas */
+.a{opacity:0;transform:translateY(40px)}
+.s.on .a{animation:up .8s var(--td-ease-out) forwards;animation-delay:calc(var(--d,0)*1s)}
+.a.l{transform:translateX(-70px)}.s.on .a.l{animation-name:side}
+.a.r{transform:translateX(70px)}.s.on .a.r{animation-name:side}
+.a.z{transform:scale(.6)}.s.on .a.z{animation-name:zoom}
+@keyframes up{to{opacity:1;transform:none}}@keyframes side{to{opacity:1;transform:none}}
+@keyframes zoom{60%{opacity:1;transform:scale(1.06)}to{opacity:1;transform:none}}
+.float{animation:fl 4s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-12px)}}
+.pulse{animation:pu 2.4s ease-in-out infinite}@keyframes pu{50%{transform:scale(1.06);filter:drop-shadow(0 0 22px rgba(94,234,212,.8))}}
+.pulse2{animation:pu2 2.4s ease-in-out infinite}@keyframes pu2{50%{box-shadow:0 0 0 18px rgba(94,234,212,.18),0 30px 60px rgba(0,0,0,.4)}}
+.shake{animation:sh 2.6s ease-in-out infinite}@keyframes sh{0%,80%,100%{transform:none}84%{transform:translateX(-5px) rotate(-5deg)}88%{transform:translateX(5px) rotate(5deg)}92%{transform:translateX(-3px)}}
+.pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:12px 22px;font-size:21px;font-weight:700;box-shadow:var(--td-shadow-md);color:var(--td-ink)}
+.pill .i{color:var(--td-teal-600)}
+.card{background:#fff;border-radius:24px;padding:28px;box-shadow:var(--td-shadow-md);border:1px solid var(--td-line)}
+.card h3{font-size:30px;margin:16px 0 8px;color:var(--td-navy-800)}.card p{font-size:21px;line-height:1.4;margin:0;color:var(--td-muted)}
+.grid{display:grid;gap:24px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.ic{width:84px;height:84px;border-radius:24px;display:flex;align-items:center;justify-content:center}.ic .i{width:46px;height:46px}
+.ic.sm{width:64px;height:64px;border-radius:18px}.ic.sm .i{width:34px;height:34px}
+.red{background:var(--td-red-100);color:var(--td-red-700)}.amber{background:var(--td-amber-100);color:var(--td-amber-700)}.teal{background:rgba(20,184,166,.16);color:var(--td-mint-300)}.violet{background:#ede7fa;color:var(--td-violet-600)}.blue{background:var(--td-blue-100);color:var(--td-blue-500)}
+.quote{font-family:var(--td-font-display);font-size:36px;font-weight:700;border-left:8px solid var(--td-teal-500);padding-left:24px;margin-top:40px;color:var(--td-navy-800)}
+.foot{position:absolute;left:90px;right:240px;bottom:24px;font-size:15px;color:#7d90ab;display:flex;justify-content:space-between;gap:30px;z-index:3}
+.dark .foot{color:#9fb3cc}
+/* fluxo */
+.flow{display:flex;justify-content:space-between;position:relative;margin-top:40px}
+.node{width:270px;text-align:center;position:relative;z-index:2}
+.node .ic{margin:0 auto 16px;width:136px;height:136px;border-radius:50%;background:#fff;box-shadow:var(--td-shadow-lg);color:var(--td-teal-600)}
+.node .ic .i{width:66px;height:66px}
+.node h3{font-size:30px;margin-bottom:6px;color:var(--td-navy-800)}.node p{font-size:20px;color:var(--td-muted);margin:0;line-height:1.35}
+.line{position:absolute;top:64px;left:135px;right:135px;height:8px;background:var(--td-line);border-radius:4px;z-index:1;overflow:hidden}
+.line i{position:absolute;inset:0;background:linear-gradient(90deg,var(--td-navy-700),var(--td-teal-500));transform-origin:left;transform:scaleX(0)}
+.s.on .line i{animation:grow 2.4s .6s ease-in-out forwards}@keyframes grow{to{transform:scaleX(1)}}
+.doc{position:absolute;top:36px;left:110px;width:60px;height:60px;z-index:3;opacity:0}.doc .logo{width:60px;height:60px}
+.s.on .doc{animation:travel 6s 3s ease-in-out infinite}
+@keyframes travel{0%{left:110px;opacity:0}8%{opacity:1}30%,36%{left:500px}62%,68%{left:890px}92%{left:1260px;opacity:1}100%{left:1260px;opacity:0}}
+/* prints */
+.split{display:flex;gap:56px;align-items:center}
+.txt{width:520px;flex:none}
+.shot h2{font-size:50px}
+.bl{list-style:none;margin:0;padding:0}.bl li{display:flex;gap:14px;align-items:center;font-size:22px;margin:16px 0;color:var(--td-ink);font-weight:500}
+.bl .i{color:var(--td-teal-600);background:var(--td-teal-100);border-radius:12px;padding:7px;width:42px;height:42px}
+.frame{position:relative;flex:1;background:#fff;border-radius:18px;box-shadow:var(--td-shadow-lg);border:1px solid var(--td-line)}
+.fbar{height:38px;display:flex;align-items:center;gap:8px;padding:0 16px;background:#eef3f9;border-radius:18px 18px 0 0;border-bottom:1px solid var(--td-line)}
+.fbar i{width:12px;height:12px;border-radius:50%;background:#f0645a}.fbar i:nth-child(2){background:#fbbf24}.fbar i:nth-child(3){background:#34d399}
+.fbar span{margin-left:14px;background:#fff;border-radius:8px;padding:4px 14px;font-size:14px;color:var(--td-muted);flex:1}
+.fimg{overflow:hidden;border-radius:0 0 18px 18px;aspect-ratio:16/9}.fimg img{width:100%;display:block;transform-origin:30% 30%}
+.s.on .fimg img{animation:kb2 14s ease-in-out forwards}@keyframes kb2{from{transform:scale(1)}to{transform:scale(1.14) translate(-2%,-1%)}}
+.chip{position:absolute;display:inline-flex;align-items:center;gap:10px;background:var(--td-navy-800);color:#fff;padding:12px 20px;border-radius:999px;font-weight:700;font-size:19px;box-shadow:var(--td-shadow-lg);z-index:4}
+.chip .i{color:var(--td-mint-300);width:24px;height:24px}
+.duo{flex:1;position:relative;height:640px}.duo .frame{position:absolute;left:0;top:0;width:820px}.duo .frame.sm{left:auto;right:-20px;top:auto;bottom:0;width:560px}
+.stamp2{position:absolute;right:30px;top:70px;border:5px solid var(--td-teal-600);color:var(--td-teal-600);font-weight:900;font-size:30px;padding:4px 16px;border-radius:10px;transform:rotate(-8deg);opacity:0;background:rgba(255,255,255,.9)}
+.s.on .stamp2{animation:stamp 3.6s 2s infinite}@keyframes stamp{0%{opacity:0;transform:rotate(-8deg) scale(2)}12%{opacity:1;transform:rotate(-8deg) scale(1)}85%{opacity:1}100%{opacity:0}}
+/* segurança */
+.rows{flex:1;display:flex;flex-direction:column;gap:20px}
+.row2{display:flex;gap:22px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:22px 26px}
+.row2 h3{font-size:28px;margin-bottom:4px}.row2 p{margin:0;font-size:20px;color:#cfe0f2}
+.vault{position:relative;height:340px;margin-top:20px}
+.srv{position:absolute;left:60px;top:70px;width:200px;height:200px;border-radius:40px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#fff}.srv .i{width:120px;height:120px}
+.shieldw{position:absolute;left:210px;top:30px;color:var(--td-teal-500)}.shieldw .i{width:150px;height:150px}
+.leak{position:absolute;left:380px;top:200px;color:#f0645a;opacity:.85}.leak .i{width:80px;height:80px}
+/* IA */
+.models{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:30px;font-size:20px}
+.models span{background:var(--td-navy-800);color:#fff;border-radius:999px;padding:8px 18px;font-weight:700}.models i{font-style:normal;color:var(--td-muted);margin-right:12px}
+.note{display:flex;align-items:center;gap:12px;font-size:22px;font-weight:600;color:var(--td-violet-600);margin-top:22px}
+/* cronograma */
+.tl{display:flex;gap:26px;margin-top:70px;position:relative}
+.tline{position:absolute;left:12%;right:12%;top:-2px;height:8px;background:var(--td-line);border-radius:4px;overflow:hidden}
+.tline i{position:absolute;inset:0;background:linear-gradient(90deg,var(--td-blue-500),var(--td-violet-600),var(--td-teal-500));transform:scaleX(0);transform-origin:left}
+.s.on .tline i{animation:grow 2s .5s ease-in-out forwards}
+.st{flex:1;background:#fff;border-radius:24px;padding:24px 26px 26px;text-align:center;box-shadow:var(--td-shadow-md);border:1px solid var(--td-line);position:relative}
+.st .n{width:64px;height:64px;border-radius:50%;color:#fff;font:800 30px var(--td-font-display);display:flex;align-items:center;justify-content:center;margin:-58px auto 10px;border:6px solid var(--td-bg)}
+.n.blue{background:var(--td-blue-500)}.n.violet{background:var(--td-violet-600)}.n.teal{background:var(--td-teal-600)}
+.st h3{font-size:28px;margin:6px 0 10px;color:var(--td-navy-800)}.st p{font-size:19px;color:var(--td-muted);margin:12px 0 0;line-height:1.4}
+.st .w{display:inline-block;font-weight:800;border-radius:999px;padding:6px 14px;font-size:18px}
+.i.big{width:50px;height:50px}.bluet{color:var(--td-blue-500)}.violett{color:var(--td-violet-600)}.tealt{color:var(--td-teal-600)}
+.mss{display:flex;gap:14px;margin-top:30px}
+.ms{flex:1;background:var(--td-navy-800);color:#fff;border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.ms b{font:800 26px var(--td-font-display);color:var(--td-mint-300)}.ms span{font-size:17px;color:#cfe0f2}
+/* final */
+.final{display:flex;align-items:center;justify-content:space-between;gap:60px}
+.url{font:800 44px var(--td-font-display);color:var(--td-mint-300);margin:0 0 30px}
+.sign{font-size:20px;color:#cfe0f2;margin:0}
+.qrbox{background:#fff;border-radius:30px;padding:26px 26px 16px;text-align:center;flex:none;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.qrbox img{width:360px;height:360px;display:block}
+.qrbox span{display:inline-flex;align-items:center;gap:8px;color:var(--td-navy-800);font-weight:800;font-size:22px;margin-top:6px}
+/* nav */
+#bar{position:fixed;left:0;bottom:0;height:6px;background:var(--td-teal-500);transition:width .5s;z-index:10}
+#nav{position:fixed;right:20px;bottom:16px;display:flex;gap:10px;z-index:10}
+#nav button{width:52px;height:52px;border-radius:50%;border:0;background:rgba(255,255,255,.92);font-size:26px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.25);color:var(--td-navy-800)}
+#cnt{position:fixed;left:20px;bottom:20px;color:#9fb3cc;font-size:15px;z-index:10;font-weight:600}
+#hint{position:fixed;left:50%;top:14px;transform:translateX(-50%);background:rgba(7,26,51,.75);color:#fff;padding:8px 18px;border-radius:20px;font-size:14px;z-index:10;transition:opacity 1s}
+@media (prefers-reduced-motion:reduce){.s *{animation-duration:.01s!important;animation-iteration-count:1!important}}
+.s:not(.hero)>.c:not(.split){display:flex;flex-direction:column;justify-content:center;padding-bottom:30px}
+.s>.c>.tag{align-self:flex-start}
+.st .w.teal{background:var(--td-teal-100);color:var(--td-teal-700)}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="inbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.1L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.9A2 2 0 0 0 16.8 4H7.2a2 2 0 0 0-1.7 1.1z"/></symbol>
+<symbol id="send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></symbol>
+<symbol id="camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+<symbol id="qr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 17h4v4h-4"/></symbol>
+<symbol id="file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></symbol>
+<symbol id="fileplus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15h6"/></symbol>
+<symbol id="filex" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9.5 12.5l5 5M14.5 12.5l-5 5"/></symbol>
+<symbol id="search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></symbol>
+<symbol id="archive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="5" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8M10 12h4"/></symbol>
+<symbol id="user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+<symbol id="users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12M6 22h12M7 2c0 6 10 6 10 10S7 16 7 22M17 2c0 6-10 6-10 10s10 4 10 10"/></symbol>
+<symbol id="eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16v-4M11 16V8M15 16v-6M19 16V5"/></symbol>
+<symbol id="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+<symbol id="history" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></symbol>
+<symbol id="wifioff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l20 20M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 5.2-2.8M2 8.8A15 15 0 0 1 6.3 6M19 13a10 10 0 0 0-2.3-1.6M22 8.8A15 15 0 0 0 10.7 5M12 20h.01"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+<symbol id="building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10M9.7 21V10M14.3 21V10M19 21V10M2 10h20L12 3z"/></symbol>
+<symbol id="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
+<symbol id="alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+<symbol id="question" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></symbol>
+<symbol id="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="browser" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 8h20M6 5.5h.01M9 5.5h.01"/></symbol>
+<symbol id="rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.9A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
+<symbol id="map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></symbol>
+<symbol id="server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01M11 6.5h6M11 17.5h6"/></symbol>
+<symbol id="cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+<symbol id="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+<symbol id="phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></symbol>
+<symbol id="cloudoff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l20 20"/><path d="M5.8 8.2A6 6 0 0 0 7 20h10M17.9 12.1A4 4 0 0 1 19 20M10 5.2A6 6 0 0 1 17.6 10"/></symbol>
+<symbol id="sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol></defs></svg>
+<div id="hint">← → setas, clique ou deslize · F tela cheia</div>
+<div id="stage">
+<section class="s dark hero"><div class="bg" style="background-image:url(img/painel.jpg)"></div><div class="ov"></div>
+<div class="c" style="display:flex;flex-direction:column;justify-content:center">
+<div class="a z" style="--d:.1;display:flex;align-items:center;gap:26px;margin-bottom:34px"><svg class="logo big pulse" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#14b8a6"/><path d="M18 14h20l10 10v26a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z" fill="#fff"/><path d="M38 14v10h10" fill="#cfe0f7"/><path d="M22 38l7 7 13-15" fill="none" stroke="#0b2545" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="wm xl">Tramita<b>DOC</b></span></div>
+<h1 class="a" style="--d:.45">Do protocolo ao campo,<br><span class="gt">com responsável e histórico.</span></h1>
+<p class="sub a" style="--d:.7;max-width:980px">Sistema web de protocolo e tramitação de processos e documentos para órgãos públicos.</p>
+<div class="a" style="--d:1;display:flex;gap:16px;flex-wrap:wrap">
+<span class="pill float"><svg class="i "><use href="#send"/></svg>Tramitação com dono</span><span class="pill float" style="animation-delay:.6s"><svg class="i "><use href="#camera"/></svg>Vistoria offline</span><span class="pill float" style="animation-delay:1.2s"><svg class="i "><use href="#qr"/></svg>Selo e QR Code</span><span class="pill float" style="animation-delay:1.8s"><svg class="i "><use href="#shield"/></svg>Dados no órgão</span></div>
+</div><div class="foot"><span>Desenvolvido por TramitaDOC · Djair Silva de Almeida</span><span>Novembro de 2026 · ← → para navegar · F tela cheia</span></div></section>
+<section class="s"><div class="c"><span class="tag a" style="--d:.1"><svg class="i "><use href="#alert"/></svg>01 · O problema</span>
+<h2 class="a" style="--d:.25">Onde está o processo? <span class="gt2">Com quem? Desde quando?</span></h2>
+<p class="sub a" style="--d:.4">Sem um sistema, a resposta depende de procurar papel e perguntar de mesa em mesa.</p>
+<div class="grid g4"><div class="card a" style="--d:0.50"><div class="ic red shake" style="animation-delay:0.0s"><svg class="i "><use href="#hourglass"/></svg></div><h3>Processo parado</h3><p>Fica dias numa gaveta e ninguém percebe.</p></div><div class="card a" style="--d:0.68"><div class="ic amber shake" style="animation-delay:0.5s"><svg class="i "><use href="#question"/></svg></div><h3>Sem dono</h3><p>“Já mandei pra lá.” “Não chegou aqui.”</p></div><div class="card a" style="--d:0.86"><div class="ic red shake" style="animation-delay:1.0s"><svg class="i "><use href="#filex"/></svg></div><h3>Papel perdido</h3><p>Folha extraviada, cópia sem original.</p></div><div class="card a" style="--d:1.04"><div class="ic amber shake" style="animation-delay:1.5s"><svg class="i "><use href="#camera"/></svg></div><h3>Vistoria sem prova</h3><p>Sem foto, sem ponto no mapa, sem data.</p></div></div>
+<p class="quote a" style="--d:1.4">Quem espera é o cidadão, que volta ao balcão sem resposta.</p></div><div class="foot"><span>Desenvolvido por TramitaDOC · Djair Silva de Almeida</span><span>Apresentação do produto · v3</span></div></section>
+<section class="s"><div class="c"><span class="tag a" style="--d:.1"><svg class="i "><use href="#rocket"/></svg>02 · Como funciona</span>
+<h2 class="a" style="--d:.25">O caminho do processo, <span class="gt2">em 4 passos</span></h2>
+<p class="sub a" style="--d:.4">Do balcão ao arquivo, cada passo tem um responsável e fica no histórico.</p>
+<div class="flow"><div class="line"><i></i></div><div class="doc"><svg class="logo" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#14b8a6"/><path d="M18 14h20l10 10v26a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z" fill="#fff"/><path d="M38 14v10h10" fill="#cfe0f7"/><path d="M22 38l7 7 13-15" fill="none" stroke="#0b2545" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="node a z" style="--d:0.40"><div class="ic"><svg class="i "><use href="#fileplus"/></svg></div><h3>Protocolar</h3><p>Número do processo na hora</p></div><div class="node a z" style="--d:0.70"><div class="ic"><svg class="i "><use href="#send"/></svg></div><h3>Tramitar</h3><p>Muda de dono só quando é recebido</p></div><div class="node a z" style="--d:1.00"><div class="ic"><svg class="i "><use href="#camera"/></svg></div><h3>Vistoriar</h3><p>Fotos e GPS, mesmo sem sinal</p></div><div class="node a z" style="--d:1.30"><div class="ic"><svg class="i "><use href="#archive"/></svg></div><h3>Emitir e arquivar</h3><p>Documentos com selo e QR Code</p></div></div>
+<div class="a" style="--d:2;display:flex;gap:16px;justify-content:center;margin-top:44px"><span class="pill"><svg class="i "><use href="#browser"/></svg>Roda no navegador</span><span class="pill"><svg class="i "><use href="#history"/></svg>Histórico de cada passo</span><span class="pill"><svg class="i "><use href="#lock"/></svg>Os dados são do órgão</span></div>
+</div><div class="foot"><span>Desenvolvido por TramitaDOC · Djair Silva de Almeida</span><span>Apresentação do produto · v3</span></div></section>
+<section class="s shot"><div class="c split">
+<div class="txt"><span class="tag a" style="--d:.1"><svg class="i "><use href="#fileplus"/></svg>Tour 1/8 · Protocolar</span><h2 class="a" style="--d:.25">O número do processo <span class='gt2'>sai na hora</span></h2><p class="sub a" style="--d:.45">Ao salvar, o processo já nasce com número, responsável e histórico.</p><ul class="bl"><li class="a l" style="--d:0.70"><svg class="i "><use href="#user"/></svg><span>Requerente pessoa física ou jurídica, com procurador</span></li><li class="a l" style="--d:0.88"><svg class="i "><use href="#check"/></svg><span>Serviço, prioridade e prazo calculado</span></li><li class="a l" style="--d:1.06"><svg class="i "><use href="#file"/></svg><span>Documentos anexados desde a entrada</span></li></ul></div>
+<div class="frame a r" style="--d:.35"><div class="fbar"><i></i><i></i><i></i><span>tramitadoc · sistema</span></div><div class="fimg"><img src="img/novo.jpg" alt="Tour 1/8 · Protocolar: tela real do TramitaDOC com dados de teste"></div><span class="chip float" style="right:-26px;top:90px;animation-delay:0.0s"><svg class="i "><use href="#check"/></svg>Número gerado</span></div>
+</div><div class="foot"><span>Desenvolvido por TramitaDOC · Djair Silva de Almeida</span><span>Apresentação do produto · v3</span></div></section>
+<section class="s shot"><div class="c split">
+<div class="txt"><span class="tag a" style="--d:.1"><svg class="i "><use href="#send"/></svg>Tour 2/8 · Tramitar</span><h2 class="a" style="--d:.25">O trajeto inteiro, <span class='gt2'>sempre com um dono</span></h2><p class="sub a" style="--d:.45">Cada setor por onde passou, quem recebeu e quanto tempo ficou.</p><ul class="bl"><li class="a l" style="--d:0.70"><svg class="i "><use href="#send"/></svg><span>Envio e recebimento registrados</span></li><li class="a l" style="--d:0.88"><svg class="i "><use href="#clock"/></svg><span>Tempo em cada setor</span></li><li class="a l" style="--d:1.06"><svg class="i "><use href="#history"/></svg><span>Linha do tempo completa</span></li></ul></div>
+<div class="frame a r" style="--d:.35"><div class="fbar"><i></i><i></i><i></i><span>tramitadoc · sistema</span></div><div class="fimg"><img src="img/processo.jpg" alt="Tour 2/8 · Tramitar: tela real do TramitaDOC com dados de teste"></div><span class="chip float" style="right:-30px;top:120px;animation-delay:0.0s"><svg class="i "><use href="#user"/></svg>1 responsável por vez</span><span class="chip float" style="left:-30px;bottom:60px;animation-delay:0.7s"><svg class="i "><use href="#clock"/></svg>Dias em cada etapa</span></div>
+</div><div class="foot"><span>Desenvolvido por TramitaDOC · Djair Silva de Almeida</span><span>Apresentação do produto · v3</span></div></section>
+<section class="s shot"><div class="c split">
+<div class="txt"><span class="tag a" style="--d:.1"><svg class="i "><use href="#inbox"/></svg>Tour 3/8 · Minha caixa</span><h2 class="a" style="--d:.25">Cada servidor sabe <span class='gt2'>o que fazer no dia</span></h2><p class="sub a" style="--d:.45">O que está comigo, a situação e o prazo, em vermelho quando vence.</p><ul class="bl"><li class="a l" style="--d:0.70"><svg class="i "><use href="#inbox"/></svg><span>Fila pessoal de processos</span></li><li class="a l" style="--d:0.88"><svg class="i "><use href="#alert"/></svg><span>Prazos vencidos em destaque</span></li><li class="a l" style="--d:1.06"><svg class="i "><use href="#search"/></svg><span>Filtros e busca</span></li></ul></div>
+<div class="frame a r" style="--d:.35"><div class="fbar"><i></i><i></i><i></i><span>tramitadoc · sistema</span></div><div class="fimg"><img src="img/caixa.jpg" alt="Tour 3/8 · Minha caixa: tela real do TramitaDOC com dados de teste"></div><span class="chip float" style="right:-24px;top:160px;animation-delay:0.0s"><svg class="i "><use href="#alert"/></svg>Prazo vencido</span></div>
+</div><div class="foot"><span>Desenvolvido por TramitaDOC · Djair Silva de Almeida</span><span>Apresentação do produto · v3</span></div></section>
+<section class="s shot"><div class="c split">
+<div class="txt"><span class="tag a" style="--d:.1"><svg class="i "><use href="#camera"/></svg>Tour 4/8 · Vistoria</span><h2 class="a" style="--d:.25">Vistoria em campo, <span class='gt2'>mesmo sem sinal</span></h2><p class="sub a" style="--d:.45">Do pedido ao atestado, passo a passo, com o lote no mapa e fotos.</p><ul class="bl"><li class="a l" style="--d:0.70"><svg class="i "><use href="#wifioff"/></svg><span>Funciona offline e sincroniza depois</span></li><li class="a l" style="--d:0.88"><svg class="i "><use href="#camera"/></svg><span>Fotos com data</span></li><li class="a l" style="--d:1.06"><svg class="i "><use href="#pin"/></svg><span>Ponto GPS no mapa</span></li></ul></div>
+<div class="frame a r" style="--d:.35"><div class="fbar"><i></i><i></i><i></i><span>tramitadoc · sistema</span></div><div class="fimg"><img src="img/vistoria.jpg" alt="Tour 4/8 · Vistoria: tela real do TramitaDOC com dados de teste"></div><span class="chip float" style="right:-30px;top:100px;animation-delay:0.0s"><svg class="i "><use href="#wifioff"/></svg>Sem sinal? Tudo bem</span><span class="chip float" style="left:-24px;bottom:80px;animation-delay:0.7s"><svg class="i "><use href="#pin"/></svg>GPS</span></div>
+</div><div class="foot"><span>Desenvolvido por TramitaDOC · Djair Silva de Almeida</span><span>Apresentação do produto · v3</span></div></section>
+<section class="s shot"><div class="c split">
+<div class="txt"><span class="tag a" style="--d:.1"><svg class="i "><use href="#map"/></svg>Tour 5/8 · Mapa</span><h2 class="a" style="--d:.25">Cada processo <span class='gt2'>no mapa</span></h2><p class="sub a" style="--d:.45">Imagem de satélite e de drone, com camadas por situação e prazo.</p><ul class="bl"><li class="a l" style="--d:0.70"><svg class="i "><use href="#map"/></svg><span>Camadas por situação</span></li><li class="a l" style="--d:0.88"><svg class="i "><use href="#pin"/></svg><span>Lotes e pontos de vistoria</span></li><li class="a l" style="--d:1.06"><svg class="i "><use href="#eye"/></svg><span>Visão do território para a gestão</span></li></ul></div>
+<div class="frame a r" style="--d:.35"><div class="fbar"><i></i><i></i><i></i><span>tramitadoc · sistema</span></div><div class="fimg"><img src="img/mapa.jpg" alt="Tour 5/8 · Mapa: tela real do TramitaDOC com dados de teste"></div><span class="chip float" style="right:-26px;top:110px;animation-delay:0.0s"><svg class="i "><use href="#map"/></svg>Satélite + drone</span></div>
+</div><div class="foot"><span>Desenvolvido por TramitaDOC · Djair Silva de Almeida</span><span>Apresentação do produto · v3</span></div></section>
+<section class="s shot"><div class="c split">
+<div class="txt"><span class="tag a" style="--d:.1"><svg class="i "><use href="#qr"/></svg>Tour 6/8 · Documentos</span><h2 class="a" style="--d:.25">Documento com selo: <span class="gt2">qualquer um confere</span></h2><p class="sub a" style="--d:.45">Certidões e relatórios saem com o trajeto do processo, assinaturas, selo e QR Code.</p>
+<ul class="bl"><li class="a l" style="--d:.7"><svg class="i "><use href="#file"/></svg><span>Certidão gerada a partir do processo</span></li><li class="a l" style="--d:.88"><svg class="i "><use href="#qr"/></svg><span>QR Code e selo de autenticidade</span></li><li class="a l" style="--d:1.06"><svg class="i "><use href="#check"/></svg><span>Página pública de verificação</span></li></ul></div>
+<div class="duo"><div class="frame a r" style="--d:.35"><div class="fbar"><i></i><i></i><i></i><span>certidão</span></div><div class="fimg"><img src="img/doc_certidao.jpg" alt="Certidão com selo"></div></div>
+<div class="frame sm a z" style="--d:1"><div class="fbar"><i></i><i></i><i></i><span>verificar documento</span></div><div class="fimg"><img src="img/verificar.jpg" alt="Verificação de documento"></div><span class="stamp2">AUTÊNTICO</span></div></div>
+</div><div class="foot"><span>Desenvolvido por TramitaDOC · Djair Silva de Almeida</span><span>Apresentação do produto · v3</span></div></section>
+<section class="s shot"><div class="c split">
+<div class="txt"><span class="tag a" style="--d:.1"><svg class="i "><use href="#chart"/></svg>Tour 7/8 · Gestão</span><h2 class="a" style="--d:.25">O gestor vê tudo, <span class='gt2'>em tempo real</span></h2><p class="sub a" style="--d:.45">Indicadores e gráficos sem planilha paralela.</p><ul class="bl"><li class="a l" style="--d:0.70"><svg class="i "><use href="#chart"/></svg><span>Processos por situação e prioridade</span></li><li class="a l" style="--d:0.88"><svg class="i "><use href="#users"/></svg><span>Desempenho por responsável</span></li><li class="a l" style="--d:1.06"><svg class="i "><use href="#hourglass"/></svg><span>Prazos à vista</span></li></ul></div>
+<div class="frame a r" style="--d:.35"><div class="fbar"><i></i><i></i><i></i><span>tramitadoc · sistema</span></div><div class="fimg"><img src="img/painel.jpg" alt="Tour 7/8 · Gestão: tela real do TramitaDOC com dados de teste"></div><span class="chip float" style="right:-22px;top:90px;animation-delay:0.0s"><svg class="i "><use href="#chart"/></svg>Ao vivo</span></div>
+</div><div class="foot"><span>Desenvolvido por TramitaDOC · Djair Silva de Almeida</span><span>Apresentação do produto · v3</span></div></section>
+<section class="s shot"><div class="c split">
+<div class="txt"><span class="tag a" style="--d:.1"><svg class="i "><use href="#search"/></svg>Tour 8/8 · Para o cidadão</span><h2 class="a" style="--d:.25">O cidadão acompanha, <span class='gt2'>sem senha</span></h2><p class="sub a" style="--d:.45">Digite o número do protocolo e veja o andamento.</p><ul class="bl"><li class="a l" style="--d:0.70"><svg class="i "><use href="#search"/></svg><span>Consulta pública pelo número</span></li><li class="a l" style="--d:0.88"><svg class="i "><use href="#phone"/></svg><span>Funciona no celular</span></li><li class="a l" style="--d:1.06"><svg class="i "><use href="#qr"/></svg><span>Confere documentos pelo QR Code</span></li></ul></div>
+<div class="frame a r" style="--d:.35"><div class="fbar"><i></i><i></i><i></i><span>consulta pública</span></div><div class="fimg"><img src="img/consulta.jpg" alt="Tour 8/8 · Para o cidadão: tela real do TramitaDOC com dados de teste"></div><span class="chip float" style="right:-26px;top:120px;animation-delay:0.0s"><svg class="i "><use href="#globe"/></svg>Página pública</span></div>
+</div><div class="foot"><span>Desenvolvido por TramitaDOC · Djair Silva de Almeida</span><span>Apresentação do produto · v3</span></div></section>
+<section class="s dark"><div class="c split">
+<div class="txt"><span class="tag a" style="--d:.1"><svg class="i "><use href="#shield"/></svg>03 · Segurança e LGPD</span><h2 class="a" style="--d:.25">Os dados são do órgão. <span class="gt">E ficam no órgão.</span></h2>
+<div class="vault a z" style="--d:.5"><div class="srv float"><svg class="i "><use href="#server"/></svg></div><div class="shieldw pulse"><svg class="i "><use href="#shield"/></svg></div><div class="leak"><svg class="i "><use href="#cloudoff"/></svg></div></div></div>
+<div class="rows"><div class="row2 a r" style="--d:0.60"><div class="ic sm teal"><svg class="i "><use href="#cloudoff"/></svg></div><div><h3>Nada sai do órgão</h3><p>Dados e documentos nos servidores do próprio órgão (on-premise).</p></div></div><div class="row2 a r" style="--d:0.80"><div class="ic sm teal"><svg class="i "><use href="#users"/></svg></div><div><h3>Acesso por perfil</h3><p>Cada pessoa vê e edita conforme o setor e o perfil.</p></div></div><div class="row2 a r" style="--d:1.00"><div class="ic sm teal"><svg class="i "><use href="#history"/></svg></div><div><h3>Rastro de tudo</h3><p>Quem fez, o quê e quando, em cada registro.</p></div></div><div class="row2 a r" style="--d:1.20"><div class="ic sm teal"><svg class="i "><use href="#lock"/></svg></div><div><h3>Atenção à LGPD</h3><p>Dados pessoais visíveis só para quem precisa.</p></div></div></div></div><div class="foot"><span>Desenvolvido por TramitaDOC · Djair Silva de Almeida</span><span>Apresentação do produto · v3</span></div></section>
+<section class="s"><div class="c"><span class="tag a vio" style="--d:.1"><svg class="i "><use href="#sparkles"/></svg>04 · IA jurídica on-premise</span>
+<h2 class="a" style="--d:.25">IA que roda <span class="gt2">dentro do órgão</span></h2>
+<p class="sub a" style="--d:.4">Modelos de pesos abertos no servidor local: o processo e os dados pessoais não vão para APIs externas.</p>
+<div class="grid g3"><div class="card a" style="--d:0.60"><div class="ic violet"><svg class="i "><use href="#file"/></svg></div><h3>Resumo do processo</h3><p>Leitura rápida de processos longos.</p></div><div class="card a" style="--d:0.80"><div class="ic violet"><svg class="i "><use href="#send"/></svg></div><h3>Sugestão de despacho</h3><p>Rascunho para o servidor revisar e assinar.</p></div><div class="card a" style="--d:1.00"><div class="ic violet"><svg class="i "><use href="#search"/></svg></div><h3>Busca inteligente</h3><p>Encontrar processos e normas pelo sentido.</p></div></div>
+<div class="models a" style="--d:1.3"><b>Candidatos em teste:</b><span>Jurema-7B</span><i>Direito brasileiro · Apache 2.0</i><span>Qwen2.5-7B-Instruct</span><i>Apache 2.0</i><span>Llama 3.1 8B Instruct</span><i>licença comunitária</i></div>
+<p class="note a" style="--d:1.5"><svg class="i "><use href="#user"/></svg> A IA entrega rascunhos. Quem decide e assina é sempre o servidor.</p></div><div class="foot"><span>Desenvolvido por TramitaDOC · Djair Silva de Almeida</span><span>Apresentação do produto · v3</span></div></section>
+<section class="s"><div class="c"><span class="tag a" style="--d:.1"><svg class="i "><use href="#clock"/></svg>05 · Cronograma</span>
+<h2 class="a" style="--d:.25">De agora até a <span class="gt2">IA em produção</span></h2>
+<div class="tl"><div class="tline"><i></i></div><div class="st a" style="--d:0.60"><div class="n blue">1</div><svg class="i big bluet"><use href="#users"/></svg><h3>Produção e testes assistidos</h3><span class="w blue">16/11 a 31/12/2026</span><p>Correções, treinamento por perfil, testes de campo e coleta de feedback.</p></div><div class="st a" style="--d:0.95"><div class="n violet">2</div><svg class="i big violett"><use href="#sparkles"/></svg><h3>Implantação da IA on-premise</h3><span class="w violet">Janeiro/2027 · ~1 mês</span><p>Servidor e GPU, escolha do modelo, integração, testes e liberação, em paralelo aos testes.</p></div><div class="st a" style="--d:1.30"><div class="n teal">3</div><svg class="i big tealt"><use href="#rocket"/></svg><h3>Estabilização e evolução</h3><span class="w teal">Fevereiro/2027 →</span><p>Acompanhamento, correções e novas funções do roadmap.</p></div></div>
+<div class="mss"><div class="ms a" style="--d:1.70"><b>16/11</b><span>Entrada em produção</span></div><div class="ms a" style="--d:1.85"><b>11/12</b><span>Revisão de meio de ciclo</span></div><div class="ms a" style="--d:2.00"><b>31/12</b><span>Versão estável + plano da IA</span></div><div class="ms a" style="--d:2.15"><b>17/01</b><span>Modelo de IA escolhido</span></div><div class="ms a" style="--d:2.30"><b>29/01</b><span>IA liberada</span></div></div></div><div class="foot"><span>Desenvolvido por TramitaDOC · Djair Silva de Almeida</span><span>Apresentação do produto · v3</span></div></section>
+<section class="s dark hero"><div class="bg" style="background-image:url(img/processo.jpg)"></div><div class="ov"></div>
+<div class="c final">
+<div><div class="a z" style="--d:.1;display:flex;align-items:center;gap:24px;margin-bottom:30px"><svg class="logo big" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#14b8a6"/><path d="M18 14h20l10 10v26a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z" fill="#fff"/><path d="M38 14v10h10" fill="#cfe0f7"/><path d="M22 38l7 7 13-15" fill="none" stroke="#0b2545" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="wm xl">Tramita<b>DOC</b></span></div>
+<h2 class="a" style="--d:.35;font-size:64px">Veja o TramitaDOC <span class="gt">funcionando.</span></h2>
+<p class="sub a" style="--d:.55">Aponte a câmera para o QR Code ou acesse:</p>
+<p class="url a" style="--d:.7">djaircode.github.io/tramitadoc</p>
+<p class="sign a" style="--d:.9">Desenvolvido por TramitaDOC · Djair Silva de Almeida</p></div>
+<div class="qrbox a z pulse2" style="--d:.6"><img src="img/qr.svg" alt="QR Code para djaircode.github.io/tramitadoc"><span><svg class="i "><use href="#phone"/></svg>Escaneie</span></div>
+</div><div class="foot"><span>Obrigado!</span><span>Apresentação do produto · v3</span></div></section>
+</div>
+<div id="bar"></div><div id="cnt"></div>
+<div id="nav"><button id="pv" aria-label="Anterior">‹</button><button id="nx" aria-label="Próxima">›</button><button id="fs" aria-label="Tela cheia">⛶</button></div>
+<script>const S=[...document.querySelectorAll('.s')],st=document.getElementById('stage');let i=0;
+function fit(){const k=Math.min(innerWidth/1600,innerHeight/900);st.style.transform=`translate(-50%,-50%) scale(${k})`}
+function go(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,j)=>{if(j===i){s.classList.remove('on');void s.offsetWidth;s.classList.add('on')}else s.classList.remove('on')});
+bar.style.width=((i+1)/S.length*100)+'%';cnt.textContent=(i+1)+' / '+S.length;history.replaceState(null,'','#'+(i+1))}
+addEventListener('resize',fit);fit();
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();go(i+1)}if(['ArrowLeft','PageUp','Backspace'].includes(e.key))go(i-1);if(e.key==='Home')go(0);if(e.key==='End')go(S.length-1);if(e.key==='f'||e.key==='F')tfs()});
+function tfs(){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}
+pv.onclick=e=>{e.stopPropagation();go(i-1)};nx.onclick=e=>{e.stopPropagation();go(i+1)};fs.onclick=e=>{e.stopPropagation();tfs()};
+st.addEventListener('click',e=>{go(e.clientX<innerWidth/3?i-1:i+1)});
+let tx=0;addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)go(d<0?i+1:i-1)});
+addEventListener('hashchange',()=>{const n=(parseInt(location.hash.slice(1))||1)-1;if(n!==i)go(n)});
+setTimeout(()=>hint.style.opacity=0,4000);
+go((parseInt(location.hash.slice(1))||1)-1);
+</script></body></html>

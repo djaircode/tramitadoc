@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TramitaDOC — Protocolo e tramitação de processos para prefeituras</title>
-<meta name="description" content="TramitaDOC: sistema web de protocolo e tramitação de processos e documentos para prefeituras e secretarias. Um responsável por vez, histórico completo, vistoria em campo com foto e GPS mesmo sem sinal, documentos com selo e QR Code.">
-<meta name="keywords" content="protocolo, tramitação de processos, prefeitura, secretaria municipal, gestão documental, vistoria em campo, Amazonas">
+<title>TramitaDOC — Protocolo e tramitação de processos para órgãos públicos</title>
+<meta name="description" content="TramitaDOC: sistema web de protocolo e tramitação de processos e documentos para órgãos públicos. Um responsável por vez, histórico completo, vistoria em campo com foto e GPS mesmo sem sinal, documentos com selo e QR Code.">
+<meta name="keywords" content="protocolo, tramitação de processos, órgão público, prefeitura, secretaria, gestão documental, vistoria em campo, Amazonas">
 <meta name="author" content="Prumo 3D Lab">
 <meta name="theme-color" content="#0b2545">
 <!-- TODO: trocar pelo domínio definitivo -->
@@ -14,17 +14,18 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="TramitaDOC">
 <meta property="og:title" content="TramitaDOC — Do protocolo ao campo, com responsável e histórico">
-<meta property="og:description" content="Protocolo, tramitação, vistoria em campo (mesmo offline), documentos com selo e QR Code, dossiê em PDF e arquivo. Para prefeituras e secretarias.">
+<meta property="og:description" content="Protocolo, tramitação, vistoria em campo (mesmo offline), documentos com selo e QR Code, dossiê em PDF e arquivo. Para órgãos públicos.">
 <meta property="og:url" content="https://www.tramitadoc.com.br/">
 <!-- TODO: criar imagem de compartilhamento 1200x630 (og-image.png) e publicar junto -->
 <meta property="og:image" content="https://www.tramitadoc.com.br/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TramitaDOC — Do protocolo ao campo, com responsável e histórico">
-<meta name="twitter:description" content="Sistema de protocolo e tramitação de processos para prefeituras e secretarias.">
+<meta name="twitter:description" content="Sistema de protocolo e tramitação de processos para órgãos públicos.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b2545'/%3E%3Cpath d='M18 14h20l10 10v26a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z' fill='%23fff'/%3E%3Cpath d='M38 14v10h10' fill='%23cfe0f7'/%3E%3Cpath d='M22 38l7 7 13-15' fill='none' stroke='%2314b8a6' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"TramitaDOC","applicationCategory":"BusinessApplication","operatingSystem":"Web","inLanguage":"pt-BR","description":"Sistema web de protocolo e tramitação de processos e documentos para prefeituras e secretarias.","publisher":{"@type":"Organization","name":"Prumo 3D Lab","address":{"@type":"PostalAddress","addressLocality":"Manaus","addressRegion":"AM","addressCountry":"BR"}}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"TramitaDOC","applicationCategory":"BusinessApplication","operatingSystem":"Web","inLanguage":"pt-BR","description":"Sistema web de protocolo e tramitação de processos e documentos para órgãos públicos.","publisher":{"@type":"Organization","name":"Prumo 3D Lab","address":{"@type":"PostalAddress","addressLocality":"Manaus","addressRegion":"AM","addressCountry":"BR"}}}
 </script>
+<link rel="stylesheet" href="assets/design/tokens.css">
 <style>
 :root{
   --navy-900:#071a33; --navy-800:#0b2545; --navy-700:#13315c; --blue-600:#1550b8; --blue-500:#1d63d6; --blue-100:#e6eefb; --blue-50:#f3f7fd;
@@ -32,7 +33,7 @@
   --ink:#0f1b2d; --muted:#4a5a70; --line:#dbe3ee; --bg:#ffffff; --soft:#f5f8fc;
   --amber:#b45309; --red:#b42318;
   --radius:16px; --shadow:0 10px 30px -12px rgba(11,37,69,.25); --shadow-lg:0 30px 60px -20px rgba(7,26,51,.45);
-  --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  --font:var(--td-font-text,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif); --font-display:var(--td-font-display,var(--font));
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -40,6 +41,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
 img,svg{display:block;max-width:100%}
 a{color:var(--blue-600)}
+h1,h2,h3,.logo{font-family:var(--font-display)}
 h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0 0 .5em}
 h2{font-size:clamp(1.75rem,3.2vw,2.5rem)}
 h3{font-size:1.15rem}
@@ -263,6 +265,24 @@ footer .small{font-size:.82rem;color:#7d90ab;margin-top:18px;border-top:1px soli
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
 .no-js .reveal{opacity:1;transform:none}
+
+/* Vídeo, apresentação e cronograma (v3) */
+.video-wrap{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-lg);background:#000;aspect-ratio:16/9;max-width:1000px;margin-inline:auto}
+.video-wrap video{width:100%;height:100%;display:block}
+.present{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
+.present .qr{background:#fff;border-radius:24px;padding:20px;text-align:center;box-shadow:var(--shadow-lg);max-width:300px;justify-self:center;color:var(--navy-800);font-weight:700}
+.present .qr img{width:100%;height:auto}
+.present .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+@media (max-width:860px){.present{grid-template-columns:1fr}}
+.crono{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:f}
+.phase{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);position:relative}
+.phase .when{display:inline-block;font-weight:800;font-size:.85rem;border-radius:999px;padding:4px 12px;margin-bottom:10px}
+.phase.p1 .when{background:var(--blue-100);color:var(--blue-600)}.phase.p2 .when{background:#ede7fa;color:#6d4fc2}.phase.p3 .when{background:var(--teal-100);color:var(--teal-700)}
+.phase ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:.95rem}.phase li{margin:4px 0}
+.milestones{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.milestones div{background:var(--navy-800);color:#fff;border-radius:14px;padding:10px 16px;font-size:.92rem}.milestones b{color:#5eead4;margin-right:6px}
+@media (max-width:980px){.crono{grid-template-columns:1fr}}
+.sign{color:#b9c9df}
 </style>
 </head>
 <body class="no-js">
@@ -314,6 +334,8 @@ footer .small{font-size:.82rem;color:#7d90ab;margin-top:18px;border-top:1px soli
         <li><a href="#funcionalidades">Funcionalidades</a></li>
         <li><a href="#gestores">Para gestores</a></li>
         <li><a href="#seguranca">Segurança</a></li>
+        <li><a href="#video">Vídeo</a></li>
+        <li><a href="#cronograma">Cronograma</a></li>
         <li><a href="#faq">Dúvidas</a></li>
       </ul>
     </nav>
@@ -329,7 +351,7 @@ footer .small{font-size:.82rem;color:#7d90ab;margin-top:18px;border-top:1px soli
     <div>
       <span class="pill"><span class="dot" aria-hidden="true"></span>Já em uso em uma secretaria municipal no Amazonas</span>
       <h1>Do protocolo ao campo, <span class="hl">com responsável e histórico.</span></h1>
-      <p class="lead">O TramitaDOC é o sistema web de protocolo e tramitação de processos para prefeituras e secretarias. Cada processo tem um responsável por vez, histórico completo, vistoria com foto e GPS mesmo sem sinal, e documentos com selo e QR Code para conferência.</p>
+      <p class="lead">O TramitaDOC é o sistema web de protocolo e tramitação de processos para órgãos públicos. Cada processo tem um responsável por vez, histórico completo, vistoria com foto e GPS mesmo sem sinal, e documentos com selo e QR Code para conferência.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#contato">Agendar uma demonstração</a>
         <a class="btn btn-ghost" href="#como-funciona">Ver como funciona</a>
@@ -391,13 +413,49 @@ footer .small{font-size:.82rem;color:#7d90ab;margin-top:18px;border-top:1px soli
   </div>
 </section>
 
+<!-- VÍDEO (para trocar o vídeo, substitua assets/video/tramitadoc.mp4 mantendo o nome) -->
+<section class="section" id="video">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Vídeo</span>
+      <h2>O TramitaDOC em cerca de 2 minutos</h2>
+      <p>Telas reais do sistema, com dados de teste.</p>
+    </div>
+    <div class="video-wrap reveal">
+      <video controls preload="metadata" playsinline poster="assets/video/poster.jpg">
+        <source src="assets/video/tramitadoc.mp4" type="video/mp4">
+        Seu navegador não reproduz vídeo. <a href="assets/video/tramitadoc.mp4">Baixe o vídeo</a>.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- APRESENTAÇÃO + QR -->
+<section class="section dark" id="apresentacao">
+  <div class="container present">
+    <div>
+      <span class="eyebrow">Apresentação</span>
+      <h2>Veja a apresentação do produto</h2>
+      <p style="color:#b9c9df">Uma apresentação animada com o caminho do processo, o tour pelas telas, segurança e LGPD, a IA jurídica on-premise e o cronograma. Use as setas, clique ou deslize; F abre em tela cheia.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="apresentacao/v3/">Abrir a apresentação</a>
+        <a class="btn btn-ghost" href="#cronograma">Ver o cronograma</a>
+      </div>
+    </div>
+    <div class="qr reveal">
+      <img src="assets/img/qr-site.svg" alt="QR Code para djaircode.github.io/tramitadoc" width="260" height="260">
+      Aponte a câmera para abrir o site
+    </div>
+  </div>
+</section>
+
 <!-- PROBLEMA -->
 <section class="section soft" id="problema">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">O problema</span>
       <h2>Onde está o processo? Com quem? Desde quando?</h2>
-      <p>Na maioria das prefeituras, a resposta depende de procurar papel, perguntar de mesa em mesa ou confiar na memória de alguém.</p>
+      <p>Em muitos órgãos públicos, a resposta depende de procurar papel, perguntar de mesa em mesa ou confiar na memória de alguém.</p>
     </div>
     <div class="grid-4">
       <div class="pain reveal"><div class="ic"><svg aria-hidden="true"><use href="#i-clock"/></svg></div><h3>Processo parado</h3><p>Fica dias numa gaveta e ninguém percebe até o cidadão voltar ao balcão.</p></div>
@@ -507,6 +565,25 @@ footer .small{font-size:.82rem;color:#7d90ab;margin-top:18px;border-top:1px soli
   </div>
 </section>
 
+<!-- CRONOGRAMA -->
+<section class="section" id="cronograma">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Cronograma 2026–2027</span>
+      <h2>Da produção à IA on-premise</h2>
+      <p>Metas de planejamento, que podem ser ajustadas conforme o uso real.</p>
+    </div>
+    <div class="crono">
+      <div class="phase p1 reveal"><span class="when">16/11 a 31/12/2026</span><h3>1 · Produção e testes assistidos</h3><p>O sistema entra em uso real, com acompanhamento de perto.</p><ul><li>Correções semanais</li><li>Treinamento por perfil</li><li>Testes de vistoria em campo</li><li>Coleta de feedback</li></ul></div>
+      <div class="phase p2 reveal"><span class="when">Janeiro/2027 · cerca de 1 mês</span><h3>2 · IA jurídica on-premise</h3><p>Em paralelo aos testes, a IA passa a rodar no servidor do próprio órgão.</p><ul><li>Preparo do servidor e da GPU</li><li>Escolha do modelo (candidatos: Jurema-7B, Qwen2.5-7B, Llama 3.1 8B)</li><li>Resumo de processo, sugestão de despacho e busca</li><li>Testes, ajustes e liberação</li></ul></div>
+      <div class="phase p3 reveal"><span class="when">Fevereiro/2027 em diante</span><h3>3 · Estabilização e evolução</h3><p>Acompanhamento do uso, correções e novas funções do roadmap.</p><ul><li>Versões mensais</li><li>Revisões de segurança e LGPD</li></ul></div>
+    </div>
+    <div class="milestones">
+      <div><b>16/11</b>Entrada em produção</div><div><b>11/12</b>Revisão de meio de ciclo</div><div><b>31/12</b>Versão estável e plano da IA</div><div><b>17/01</b>Modelo de IA escolhido</div><div><b>29/01</b>IA liberada</div>
+    </div>
+  </div>
+</section>
+
 <!-- EM BREVE -->
 <section class="section soft" id="em-breve">
   <div class="container">
@@ -516,7 +593,7 @@ footer .small{font-size:.82rem;color:#7d90ab;margin-top:18px;border-top:1px soli
       <p>Próximos passos do produto, em desenvolvimento. Ainda não disponíveis.</p>
     </div>
     <div class="grid-3">
-      <div class="soon reveal"><span class="badge b-amber">Em breve</span><h3>Várias secretarias tramitando entre si</h3><p>Processos circulando entre secretarias da mesma prefeitura, com o mesmo controle de responsável e histórico.</p></div>
+      <div class="soon reveal"><span class="badge b-amber">Em breve</span><h3>Vários setores e órgãos tramitando entre si</h3><p>Processos circulando entre secretarias e setores do mesmo órgão, com o mesmo controle de responsável e histórico.</p></div>
       <div class="soon reveal"><span class="badge b-amber">Em breve</span><h3>Assinatura eletrônica gov.br</h3><p>Integração para assinatura eletrônica com conta gov.br, conforme as regras do serviço.</p></div>
       <div class="soon reveal"><span class="badge b-amber">Em breve</span><h3>Ofícios e memorandos</h3><p>Redação, numeração e envio de ofícios e memorandos dentro do próprio sistema.</p></div>
     </div>
@@ -577,7 +654,7 @@ footer .small{font-size:.82rem;color:#7d90ab;margin-top:18px;border-top:1px soli
   <div class="container">
     <div class="foot">
       <a class="logo" href="#topo" aria-label="TramitaDOC, voltar ao topo"><svg aria-hidden="true"><use href="#i-logo"/></svg><span>Tramita<span class="doc">DOC</span></span></a>
-      <div>TramitaDOC é um produto da <strong style="color:#fff">Prumo 3D Lab</strong> · Manaus/AM</div>
+      <div class="sign">Desenvolvido por <strong style="color:#fff">TramitaDOC</strong> · Djair Silva de Almeida · <a href="apresentacao/v3/" style="color:#5eead4">Apresentação</a></div>
       <!-- TODO: e-mail definitivo -->
       <a href="mailto:contato@tramitadoc.com.br">contato@tramitadoc.com.br</a>
     </div>
